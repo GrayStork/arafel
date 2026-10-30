@@ -1,0 +1,15 @@
+---
+// A fog form from the kit: distorted contours behind a hero or section.
+import { nextSuffix, scopeIds } from "../svg";
+import spread from "../svg/fog-spread.svg?raw";
+import storm from "../svg/fog-storm.svg?raw";
+import contour from "../svg/fog-contour.svg?raw";
+import rune from "../svg/fog-rune.svg?raw";
+
+const SVG = { spread, storm, contour, rune };
+
+interface Props { kind: keyof typeof SVG }
+const { kind } = Astro.props;
+const svg = scopeIds(SVG[kind], nextSuffix());
+---
+<Fragment set:html={svg} />

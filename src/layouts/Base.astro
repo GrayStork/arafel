@@ -11,9 +11,10 @@ interface Props {
   voice: string;
   world?: WorldId;
   sections?: { label: string; href: string; current?: boolean }[];
+  noindex?: boolean;
 }
 
-const { title, description, theme, voice, world, sections = [] } = Astro.props;
+const { title, description, theme, voice, world, sections = [], noindex = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" data-theme={theme} data-voice={voice}>
@@ -22,6 +23,7 @@ const { title, description, theme, voice, world, sections = [] } = Astro.props;
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>

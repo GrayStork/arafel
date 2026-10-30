@@ -1,0 +1,10 @@
+---
+// Machine data line: 14.11.26 · TLV · 128 BPM. The date is in A3.
+interface Props { date?: string; parts?: string[]; live?: boolean }
+const { date, parts = [], live = false } = Astro.props;
+---
+<span class="ei-meta">
+  {live && <span class="ei-meta__live" aria-hidden="true"></span>}
+  {date && <span style="color:var(--ember)">{date}</span>}
+  {parts.map((p, i) => <>{(date || i > 0) && <span class="ei-meta__sep">·</span>}{p}</>)}
+</span>

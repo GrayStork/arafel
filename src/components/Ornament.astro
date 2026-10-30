@@ -1,0 +1,16 @@
+---
+// A voice ornament from the kit, inline so it reads the palette's variables.
+import { nextSuffix, scopeIds } from "../svg";
+import imperial from "../svg/ornament-imperial-frieze.svg?raw";
+import prism from "../svg/ornament-prism-diamond.svg?raw";
+import relayBand from "../svg/ornament-relay-lines-band.svg?raw";
+import relayGround from "../svg/ornament-relay-lines-ground.svg?raw";
+import inscription from "../svg/ornament-inscription-runeband.svg?raw";
+
+const SVG = { imperial, prism, "relay-band": relayBand, "relay-ground": relayGround, inscription };
+
+interface Props { kind: keyof typeof SVG }
+const { kind } = Astro.props;
+const svg = scopeIds(SVG[kind], nextSuffix());
+---
+<Fragment set:html={svg} />

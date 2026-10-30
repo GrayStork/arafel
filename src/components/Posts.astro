@@ -1,0 +1,10 @@
+---
+interface Post { date: string; title: string; summary?: string; href?: string }
+interface Props { items: Post[] }
+const { items } = Astro.props;
+---
+<ul class="ei-posts">
+  {items.map((p) => (
+    <li><time>{p.date}</time><div><a href={p.href ?? "#"}>{p.title}</a>{p.summary && <small>{p.summary}</small>}</div></li>
+  ))}
+</ul>

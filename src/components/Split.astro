@@ -1,0 +1,20 @@
+---
+// Two halves side by side (stacked on a phone): day on the left, night on the right.
+// Each half sets its own palette and voice. Content goes in the "day" and "night" slots.
+import Fog from "./Fog.astro";
+
+interface Half { theme: string; voice: string; fog?: "spread" | "storm" | "contour" | "rune" }
+interface Props { day: Half; night: Half; seam?: [string, string] } // faces in /kit/img/faces
+const { day, night, seam } = Astro.props;
+---
+<div class="ei-split">
+  <section class="day" data-theme={day.theme} data-voice={day.voice}>
+    {day.fog && <Fog kind={day.fog} />}
+    <slot name="day" />
+  </section>
+  <section class="night" data-theme={night.theme} data-voice={night.voice}>
+    {night.fog && <Fog kind={night.fog} />}
+    <slot name="night" />
+  </section>
+  {seam && <div class="ei-seam" aria-hidden="true"><img src={`/kit/img/faces/${seam[0]}`} alt="" /><img src={`/kit/img/faces/${seam[1]}`} alt="" /></div>}
+</div>

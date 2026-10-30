@@ -1,8 +1,18 @@
 ---
-interface Props { kicker: string; title: string; lede?: string }
-const { kicker, title, lede } = Astro.props;
+import Fog from "./Fog.astro";
+
+interface Props {
+  kicker: string;
+  title: string;
+  lede?: string;
+  fog?: "spread" | "storm" | "contour" | "rune";
+  photo?: string; // file in /kit/img/photos
+}
+const { kicker, title, lede, fog, photo } = Astro.props;
 ---
 <section class="ei-hero pad">
+  {photo && <img class="ei-bg" src={`/kit/img/photos/${photo}`} alt="" />}
+  {fog && <Fog kind={fog} />}
   <p class="ei-kicker">{kicker}</p>
   <h1 class="ei-title ei-title--hit v-title" data-text={title}>{title}</h1>
   {lede && <p class="lede">{lede}</p>}

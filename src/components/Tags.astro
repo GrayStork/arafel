@@ -1,0 +1,5 @@
+---
+interface Props { items: string[] }
+const { items } = Astro.props;
+---
+<ul class="ei-tags">{items.map((t) => <li>{t}</li>)}</ul>

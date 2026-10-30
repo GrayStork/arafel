@@ -1,0 +1,96 @@
+---
+// Gallery of the shell components in each world's palette and voice. Not linked, noindex.
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Sec from "../components/Sec.astro";
+import Mood from "../components/Mood.astro";
+import Cols from "../components/Cols.astro";
+import Fig from "../components/Fig.astro";
+import Split from "../components/Split.astro";
+import Litany from "../components/Litany.astro";
+import Lineup from "../components/Lineup.astro";
+import Meta from "../components/Meta.astro";
+import Button from "../components/Button.astro";
+import Actions from "../components/Actions.astro";
+import Posts from "../components/Posts.astro";
+import Tags from "../components/Tags.astro";
+import Ornament from "../components/Ornament.astro";
+import Fog from "../components/Fog.astro";
+
+const lineup = [
+  { time: "21:00", name: "Eidolon", sub: "Dance · performance" },
+  { time: "22:00", name: "Rite Tec", sub: "Technique · method" },
+];
+---
+<Base title="Components · Arafel" theme="club" voice="imperial" noindex>
+  <Hero kicker="Shell · night · Cobalt Haze × Imperial" title="Shell" lede="Every block a page is built from, in the three worlds." fog="contour">
+    <Actions><Button label="Enter" href="#day" /><Button label="Booked" pressed /></Actions>
+  </Hero>
+
+  <Sec kicker="Imperial" title="Litany, meta, lineup">
+    <Litany kind="turn" lines={["Force", "starts at", "the Floor", "is routed", "by the center"]} turn={2} />
+    <Ornament kind="imperial" />
+    <p><Meta live date="14.11.26" parts={["TLV", "128 BPM"]} /></p>
+    <Lineup kind="flyer" items={lineup} />
+  </Sec>
+
+  <Mood theme="axis-arch" voice="prism" id="day">
+    <Sec kicker="Day · Hidden Axis architect × Prism" title="Posts and tags">
+      <Litany kind="offset" lines={["Listen", "match", "respond", "never", "force"]} turn={4} size="section" />
+      <Ornament kind="prism" />
+      <Posts items={[
+        { date: "28.10.26", title: "A post title", summary: "One line on what it is about." },
+        { date: "12.09.26", title: "Another post title", summary: "One more line." },
+      ]} />
+      <Tags items={["Platform", "Infrastructure", "Workflow engines"]} />
+      <Lineup kind="cascade" items={lineup} />
+    </Sec>
+  </Mood>
+
+  <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }} seam={["eidolon-axis-arch.webp", "eidolon-club.webp"]}>
+    <Fragment slot="day">
+      <p class="ei-kicker">Split · by day</p>
+      <h2 class="v-title">Architect</h2>
+      <p>The day half.</p>
+      <div class="grow"></div>
+      <Button label="Day" href="/architect/" />
+    </Fragment>
+    <Fragment slot="night">
+      <p class="ei-kicker">Split · by night</p>
+      <h2 class="v-title">Eidolon</h2>
+      <p>The night half.</p>
+      <div class="grow"></div>
+      <Button label="Night" href="/eidolon/" />
+    </Fragment>
+  </Split>
+
+  <Mood theme="rite-axis" voice="relay" band>
+    <Sec kicker="Rite · Axis × Relay" title="Mood with contour band">
+      <Litany kind="call" lines={["Lost in the music", "fully in charge", "of the body", "at once"]} size="section" />
+      <Actions><Button kind="pixel" label="Enter" /><Button kind="pixel" label="Booked" pressed /></Actions>
+    </Sec>
+  </Mood>
+
+  <Mood theme="rite-club" band>
+    <Sec kicker="Rite · Club" title="Cols and figure">
+      <Cols>
+        <div><p>Text column. Techno legwork and aerobic step patterns keep a constant rhythmic floor.</p></div>
+        <Fig photo="kneel.webp" />
+      </Cols>
+    </Sec>
+  </Mood>
+
+  <Mood theme="rite-snake" voice="inscription">
+    <Sec kicker="Rite · Snake × Inscription" title="Rune band">
+      <Litany kind="tone" lines={["Human mind", "produces", "creates", "things"]} size="section" />
+    </Sec>
+    <Ornament kind="inscription" />
+  </Mood>
+
+  <Mood theme="rite-love">
+    <section class="ei-sec pad" style="min-height:240px">
+      <Fog kind="rune" />
+      <p class="ei-kicker">Rite · Love</p><h2 class="v-sub">Fog: rune</h2>
+    </section>
+  </Mood>
+</Base>

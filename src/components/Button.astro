@@ -1,0 +1,9 @@
+---
+// Prism for the canon voices, pixel (Sixtyfour) for Relay and Inscription.
+interface Props { label: string; href?: string; kind?: "prism" | "pixel"; pressed?: boolean }
+const { label, href, kind = "prism", pressed = false } = Astro.props;
+const cls = `ei-btn ei-btn--${kind}${pressed ? " is-pressed" : ""}`;
+---
+{href
+  ? <a class={cls} href={href}><span class="ei-btn__label" data-text={label}>{label}</span></a>
+  : <button class={cls} aria-pressed={pressed ? "true" : undefined}><span class="ei-btn__label" data-text={label}>{label}</span></button>}

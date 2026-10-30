@@ -1,0 +1,16 @@
+---
+interface Item { time: string; name: string; sub?: string; href?: string }
+interface Props { kind: "flyer" | "cascade" | "index"; items: Item[] }
+const { kind, items } = Astro.props;
+---
+<ul class={`ei-lineup ei-lineup--${kind}`}>
+  {items.map((it) => (
+    <li>
+      <a class="ei-lineup__item" href={it.href ?? "#"}>
+        <span class="ei-lineup__time">{it.time}</span>
+        <span class="ei-lineup__name ei-hit-on-hover v-title" data-text={it.name}>{it.name}</span>
+        {it.sub && <span class="ei-lineup__sub">{it.sub}</span>}
+      </a>
+    </li>
+  ))}
+</ul>

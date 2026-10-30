@@ -1,0 +1,14 @@
+---
+// One line per entry; `turn` marks the line split in A2 over A1.
+interface Props {
+  kind: "turn" | "offset" | "sink" | "tone" | "call";
+  lines: string[];
+  turn?: number;
+  size?: "hero" | "section";
+}
+const { kind, lines, turn, size = "hero" } = Astro.props;
+const fontSize = size === "hero" ? "clamp(28px, 3vw + 14px, 48px)" : "clamp(24px, 2vw + 14px, 38px)";
+---
+<ul class={`ei-litany ei-litany--${kind}`} style={`font-size:${fontSize};line-height:.9`}>
+  {lines.map((l, i) => <li class={i === turn ? "is-turn" : undefined}>{l}</li>)}
+</ul>

@@ -1,0 +1,12 @@
+---
+// A band of the page in another palette (and optionally voice).
+// Rite Tec closes each mood with the Relay contour lines.
+import Ornament from "./Ornament.astro";
+
+interface Props { theme: string; voice?: string; band?: boolean; id?: string }
+const { theme, voice, band = false, id } = Astro.props;
+---
+<section class="ei-mood" data-theme={theme} data-voice={voice} id={id}>
+  <slot />
+  {band && <Ornament kind="relay-band" />}
+</section>

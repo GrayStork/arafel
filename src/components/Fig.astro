@@ -1,0 +1,5 @@
+---
+interface Props { photo: string; alt?: string }
+const { photo, alt = "" } = Astro.props;
+---
+<figure class="ei-fig"><img src={`/kit/img/photos/${photo}`} alt={alt} loading="lazy" /></figure>

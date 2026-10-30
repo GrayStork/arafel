@@ -1,0 +1,9 @@
+---
+interface Props { kicker?: string; title?: string; id?: string }
+const { kicker, title, id } = Astro.props;
+---
+<section class="ei-sec pad" id={id}>
+  {kicker && <p class="ei-kicker">{kicker}</p>}
+  {title && <h2 class="v-sub">{title}</h2>}
+  <slot />
+</section>
