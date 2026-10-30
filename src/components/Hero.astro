@@ -6,15 +6,30 @@ interface Props {
   title: string;
   lede?: string;
   fog?: "spread" | "storm" | "contour" | "rune";
-  photo?: string; // file in /kit/img/photos
+  photo?: string; // file in /kit/img/photos, shown as the kit's graded background
+  ghost?: string; // file in /kit/img/photos, shown monochrome and faint under the fog
 }
-const { kicker, title, lede, fog, photo } = Astro.props;
+const { kicker, title, lede, fog, photo, ghost } = Astro.props;
 ---
 <section class="ei-hero pad">
   {photo && <img class="ei-bg" src={`/kit/img/photos/${photo}`} alt="" />}
+  {ghost && <div class="ghost" aria-hidden="true" style={`background-image:url(/kit/img/photos/${ghost})`}></div>}
   {fog && <Fog kind={fog} />}
   <p class="ei-kicker">{kicker}</p>
   <h1 class="ei-title ei-title--hit v-title" data-text={title}>{title}</h1>
   {lede && <p class="lede">{lede}</p>}
   <slot />
 </section>
+
+<style>
+  /* A movement photo barely there under the fog: monochrome, low opacity,
+     torn by a short stepped glitch once every 8 bars at 128 BPM (15s). */
+  .ghost { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: 50% 30%; filter: grayscale(1) contrast(1.15); opacity: .14; animation: ghost-jolt 15s steps(1) infinite; }
+  .ghost::before, .ghost::after { content: ""; position: absolute; inset: 0; background: inherit; clip-path: inset(100% 0 0 0); }
+  .ghost::before { animation: ghost-tear-a 15s steps(1) infinite; }
+  .ghost::after { animation: ghost-tear-b 15s steps(1) infinite; }
+  @keyframes ghost-jolt { 0%, 96% { transform: none; } 96.4% { transform: translateX(3px); } 97.2% { transform: translateX(-2px); } 97.8% { transform: none; } }
+  @keyframes ghost-tear-a { 0%, 96% { clip-path: inset(100% 0 0 0); transform: none; } 96.4% { clip-path: inset(28% 0 58% 0); transform: translateX(-14px); } 97.2% { clip-path: inset(64% 0 22% 0); transform: translateX(10px); } 97.8% { clip-path: inset(100% 0 0 0); transform: none; } }
+  @keyframes ghost-tear-b { 0%, 96.4% { clip-path: inset(100% 0 0 0); transform: none; } 96.8% { clip-path: inset(44% 0 47% 0); transform: translateX(18px); } 97.6% { clip-path: inset(100% 0 0 0); transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .ghost, .ghost::before, .ghost::after { animation: none; } }
+</style>
