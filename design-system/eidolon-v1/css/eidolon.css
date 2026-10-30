@@ -314,7 +314,7 @@ img{max-width:100%}
 [data-theme="rite-club"] { --abyss: #000000; --surface: #0b0a09; --surface-raised: #161412; --field-1: #1f1b18; --field-2: #3a322b; --field-3: #5f544a; --line: #24201b; --line-strong: #706459; --ink: #f0ece6; --ink-muted: #a89d91; --bone: #efe8dd; --trace: #7a6cff; --signal: #ff5ad9; --on-signal: #000000; --ember: #36f0dc; --deep: #3d0868; --on-deep: #ffffff; --fog: #3a322b22; --signal-glow: #ff5ad940; --focus: #ff5ad9; --glow-signal: 0 0 20px #ff5ad940; }
 [data-theme="rite-snake"] { --abyss: #000000; --surface: #0b0a09; --surface-raised: #161412; --field-1: #1f1b18; --field-2: #3a322b; --field-3: #5f544a; --line: #24201b; --line-strong: #706459; --ink: #f0ece6; --ink-muted: #a89d91; --bone: #efe8dd; --trace: #3fe0c8; --signal: #bfe468; --on-signal: #000000; --ember: #ef4a26; --deep: #0e3b36; --on-deep: #ffffff; --fog: #3a322b22; --signal-glow: #bfe46840; --focus: #bfe468; --glow-signal: 0 0 20px #bfe46840; }
 [data-theme="rite-love"] { --abyss: #000000; --surface: #0b0a09; --surface-raised: #161412; --field-1: #1f1b18; --field-2: #3a322b; --field-3: #5f544a; --line: #24201b; --line-strong: #706459; --ink: #f0ece6; --ink-muted: #a89d91; --bone: #efe8dd; --trace: #bfb4ff; --signal: #ff8a6e; --on-signal: #000000; --ember: #e33a5c; --deep: #4a1530; --on-deep: #ffffff; --fog: #3a322b22; --signal-glow: #ff8a6e40; --focus: #ff8a6e; --glow-signal: 0 0 20px #ff8a6e40; }
-[data-theme="rite-axis"] { --abyss: #000000; --surface: #0b0a09; --surface-raised: #161412; --field-1: #1f1b18; --field-2: #3a322b; --field-3: #5f544a; --line: #24201b; --line-strong: #706459; --ink: #f0ece6; --ink-muted: #a89d91; --bone: #efe8dd; --trace: #2fd0d8; --signal: #a99bff; --on-signal: #000000; --ember: #e5a06e; --deep: #2e2160; --on-deep: #ffffff; --fog: #3a322b22; --signal-glow: #a99bff40; --focus: #a99bff; --glow-signal: 0 0 20px #a99bff40; }
+[data-theme="rite-axis"] { --abyss: #000000; --surface: #0b0a09; --surface-raised: #161412; --field-1: #1f1b18; --field-2: #3a322b; --field-3: #5f544a; --line: #24201b; --line-strong: #706459; --ink: #f0ece6; --ink-muted: #a89d91; --bone: #efe8dd; --trace: #e5a06e; --signal: #a99bff; --on-signal: #000000; --ember: #2fd0d8; --deep: #2e2160; --on-deep: #ffffff; --fog: #3a322b22; --signal-glow: #a99bff40; --focus: #a99bff; --glow-signal: 0 0 20px #a99bff40; }
 
 /* ---------- Voices. Canon: imperial, signal, prism. In work: relay (digital), inscription (restored for the Rite Tec site). the second dimension of the language, beside the palette.
    A voice sets the title, subhead, reading and nav faces, the button kind, the litany and lineup settings.
@@ -537,6 +537,9 @@ img{max-width:100%}
   .ei-seam img:first-child { clip-path: inset(0 0 50% 0); } .ei-seam img:last-child { clip-path: inset(50% 0 0 0); }
 }
 @container (max-width: 720px) { .ei-split .day { padding-bottom: clamp(32px, 6vw, 72px); } .ei-split .night { padding-top: clamp(32px, 6vw, 72px); } }
+
+
+
 
 
 
