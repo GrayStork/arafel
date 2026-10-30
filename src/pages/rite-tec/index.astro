@@ -1,51 +1,31 @@
 ---
 import Base from "../../layouts/Base.astro";
-import Hero from "../../components/Hero.astro";
-import Sec from "../../components/Sec.astro";
-import Mood from "../../components/Mood.astro";
-import Cols from "../../components/Cols.astro";
-import Fig from "../../components/Fig.astro";
-import Litany from "../../components/Litany.astro";
-import Lineup from "../../components/Lineup.astro";
-import Button from "../../components/Button.astro";
-import Actions from "../../components/Actions.astro";
+import DissolveStripe from "../../components/DissolveStripe.astro";
 import { world } from "../../worlds";
+import * as overview from "../../content/rite-tec/overview.md";
+import * as mechanics from "../../content/rite-tec/mechanics.md";
+import * as space from "../../content/rite-tec/space.md";
+import * as footwork from "../../content/rite-tec/footwork.md";
+import * as vocabulary from "../../content/rite-tec/vocabulary.md";
+import * as practice from "../../content/rite-tec/practice.md";
+import * as music from "../../content/rite-tec/music.md";
+import * as lineage from "../../content/rite-tec/lineage.md";
 
 const w = world("rite-tec");
 
-// Each layer sits on the black Rite ground in the variant of its mood.
-const layers = [
-  {
-    id: "engine", theme: "rite-club", photo: "kneel.webp",
-    kicker: "Layer 01 · The legs", title: "The engine",
-    text: "Aerobic step patterns and techno legwork keep a constant rhythmic floor. One weight change per beat or subdivision. It never stops.",
-  },
-  {
-    id: "transmission", theme: "rite-snake", photo: "forest.webp",
-    kicker: "Layer 02 · Spine, hips, fascia", title: "The transmission",
-    text: "Taiji, I Liq Chuan and wing chun route force from the feet through the kua and the spine as a spiral. The upper body moves as a consequence of the base, not on its own.",
-  },
-  {
-    id: "signal", theme: "rite-love", photo: "hazeblue.webp",
-    kicker: "Layer 03 · Arms, hands, head", title: "The signal",
-    text: "Popping hits, robotic stops, mime planes and isolations make the transmitted force visible. Sharp, precise accents at the end of the spiral.",
-  },
-  {
-    id: "drama", theme: "rite", photo: "mimefog.webp",
-    kicker: "Layer 04 · The whole body, sparingly", title: "The drama",
-    text: "Contractions, falls and reaches from contemporary and jazz dance, butoh masks and slow drift. They break the mechanical frame open at the peaks and drops and give the routine its weight.",
-  },
+// One tab per part of the style, each on the black Rite ground in its own variant.
+const tabs = [
+  { id: "overview", label: "Overview", theme: "rite", title: "Definition and pitch", doc: overview },
+  { id: "mechanics", label: "Mechanics", theme: "rite-snake", title: "Neijia, bone and fascia", doc: mechanics },
+  { id: "space", label: "Space", theme: "rite-axis", title: "Directionality and space", doc: space },
+  { id: "footwork", label: "Footwork", theme: "rite-club", title: "Footwork and training", doc: footwork },
+  { id: "vocabulary", label: "Vocabulary", theme: "rite-love", title: "Vocabulary and techniques", doc: vocabulary },
+  { id: "practice", label: "Practice", theme: "rite", title: "Mind, body and the rite", doc: practice },
+  { id: "music", label: "Music", theme: "rite-club", title: "Music and aesthetic frame", doc: music },
+  { id: "lineage", label: "Lineage", theme: "rite-axis", title: "Lineage and influences", doc: lineage },
 ];
-
-const lineage = [
-  { time: "01", name: "Popping", sub: "Hits, waves, robot, mime and dime stops. Credited to Boogaloo Sam and the Electric Boogaloos, Fresno, 1977." },
-  { time: "02", name: "The cypher", sub: "The format: improvised, call and response, the dancer at the center." },
-  { time: "03", name: "Aerobics", sub: "Patterns, endurance, rhythm and breath, after Gilad Janklowicz and Bodies in Motion." },
-  { time: "04", name: "Industrial", sub: "Cybergoth, industrial dance and Tecktonik: the music world, the stomps, one move per beat, quick crossing hand work." },
-  { time: "05", name: "Neijia", sub: "Taiji, I Liq Chuan and wing chun: spiral routing, rooting, empty and full, centerline, awareness." },
-  { time: "06", name: "Contemporary", sub: "Graham contraction and release, Humphrey fall and recovery, the theatrical jazz of Cole and Fosse." },
-  { time: "07", name: "Butoh", sub: "Hijikata and Ohno, from 1959: dissonance, mask changes, slow drift, sudden bursts." },
-];
+const num = (i: number) => String(i + 1).padStart(2, "0");
+const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6).toUpperCase()}${t.slice(6)}`);
 ---
 <Base
   title="Rite Tec · Arafel"
@@ -53,95 +33,153 @@ const lineage = [
   theme={w.theme}
   voice={w.voice}
   world={w.id}
-  sections={[
-    { label: "Layers", href: "#layers" },
-    { label: "Name", href: "#name" },
-    { label: "Lineage", href: "#lineage" },
-  ]}
 >
-  <Hero
-    kicker="A dark-electronic club dance technique"
-    title="Rite Tec"
-    lede="Martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog."
-    fog="contour"
-    ghost="yard.webp"
-  >
-    <Actions>
-      <Button label="The layers" href="#layers" />
-      <Button label="Lineage" href="#lineage" />
-    </Actions>
-  </Hero>
+  <header class="rt-head pad">
+    <p class="ei-kicker">A dark-electronic club dance style · a combination of techniques</p>
+    <h1 class="ei-title ei-title--hit v-title" data-text="Rite Tec">Rite Tec</h1>
+    <p class="rt-lede">Martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog.</p>
+  </header>
+  <DissolveStripe />
 
-  <Mood theme="rite" band>
-    <Sec kicker="Definition" title="Four layers, one body">
-      <p>Rite Tec is a club dance technique for the dark end of the night: witch house, darkwave, EBM, industrial, techno, experimental electronic and IDM.</p>
-      <p>Street illusion on the upper body. A stepping engine on the legs. Chinese martial arts mechanics join them, sending every movement from the ground through one spiral of bone and fascia. A theatrical layer from contemporary dance, jazz and butoh carries the peaks.</p>
-      <Litany kind="turn" lines={["Force", "starts at", "the floor", "coils through", "the spine", "and hits"]} turn={2} size="section" />
-    </Sec>
-  </Mood>
+  <div class="rt pad" data-tabs>
+    <nav class="rt-rail" aria-label="Rite Tec">
+      <div role="tablist" aria-orientation="vertical">
+        {tabs.map((t, i) => (
+          <a role="tab" id={`tab-${t.id}`} href={`#${t.id}`} aria-controls={t.id} aria-selected={i === 0 ? "true" : "false"} data-theme={t.theme}>
+            <span class="rt-num">{num(i)}</span><span class="rt-label">{t.label}</span>
+          </a>
+        ))}
+      </div>
+    </nav>
 
-  <Mood theme="rite-axis" band id="philosophy">
-    <Sec kicker="Philosophy · Rite · Axis" title="Answer the beat">
-      <p>Most club dancing rides the beat. Rite Tec is built to answer it.</p>
-      <p>The parts exist on their own. The claim is the joining. Popping isolates, neijia connects. Rite Tec uses the connection to power the isolation: the hit is the visible end of a whole-body spiral.</p>
-      <Litany kind="offset" lines={["Listen", "match", "respond", "never", "force"]} turn={4} size="section" />
-    </Sec>
-  </Mood>
-
-  <div id="layers">
-    {layers.map((l) => (
-      <Mood theme={l.theme} band id={l.id}>
-        <Sec>
-          <Cols>
-            <div>
-              <p class="ei-kicker">{l.kicker}</p>
-              <h2 class="v-sub">{l.title}</h2>
-              <p>{l.text}</p>
-            </div>
-            <Fig photo={l.photo} />
-          </Cols>
-        </Sec>
-      </Mood>
-    ))}
+    <div class="rt-panels">
+      {tabs.map((t, i) => (
+        <section role="tabpanel" id={t.id} aria-labelledby={`tab-${t.id}`} data-theme={t.theme} class="rt-panel">
+          <p class="ei-kicker">{num(i)} · {variant(t.theme)}</p>
+          <h2 class="v-sub">{t.title}</h2>
+          <div class="rt-doc"><t.doc.Content /></div>
+          <nav class="rt-step" aria-label="Next and previous">
+            {i > 0 && <a href={`#${tabs[i - 1].id}`} data-step><small>Previous</small>{tabs[i - 1].label}</a>}
+            {i < tabs.length - 1 && <a href={`#${tabs[i + 1].id}`} data-step class="next"><small>Next</small>{tabs[i + 1].label}</a>}
+          </nav>
+        </section>
+      ))}
+    </div>
   </div>
-
-  <Mood theme="rite" band id="name">
-    <Sec kicker="The name" title="Rite and Tec">
-      <Cols>
-        <div>
-          <h3 class="v-sub">Rite</h3>
-          <p>Ritual, repetition and trance. The club as ceremony.</p>
-        </div>
-        <div>
-          <h3 class="v-sub">Tec</h3>
-          <p>Technique, techno and tectonic. Plates moving under pressure.</p>
-        </div>
-      </Cols>
-      <Cols>
-        <div>
-          <h3 class="v-sub">Dissonance</h3>
-          <p>A technique I reach for at chosen moments. Machine and body, precision and collapse, a calm face on a violent body, ultra-slow movement over a fast track. It keeps the audience from settling.</p>
-        </div>
-        <div>
-          <h3 class="v-sub">Invocation</h3>
-          <p>Whatever the vocabulary, the dance reads as conjuring, invoking or directing forces. A power surge, a prayer, an act of zeal. With the fog and the dark mood, this makes the club a ceremony rather than a dance floor.</p>
-        </div>
-      </Cols>
-    </Sec>
-  </Mood>
-
-  <Mood theme="rite" id="lineage">
-    <Sec kicker="Lineage" title="Seven influences, one job each">
-      <p>Each tradition earns its place with one job. What it brings stays. The rest is left behind.</p>
-      <Lineup kind="index" items={lineage} />
-      <p>Tecktonik, born at the Metropolis club outside Paris in the 2000s, showed that a club fusion can become a named technique. Rite Tec grounds its fusion in a body-mechanics system instead of a scene look.</p>
-    </Sec>
-  </Mood>
 </Base>
 
+<script>
+  // Tabs that keep their place in the URL. Without JavaScript every part shows in order.
+  const root = document.querySelector<HTMLElement>("[data-tabs]");
+  if (root) {
+    const tabs = [...root.querySelectorAll<HTMLAnchorElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+    const rail = root.querySelector<HTMLElement>(".rt-rail")!;
+    root.classList.add("is-tabbed");
+
+    const select = (id: string, focus = false, scroll = false) => {
+      const tab = tabs.find((t) => t.getAttribute("aria-controls") === id) ?? tabs[0];
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach((p) => (p.hidden = p.id !== tab.getAttribute("aria-controls")));
+      // Keep the current tab in view inside the phone's scrolling bar.
+      rail.scrollTo({ left: tab.offsetLeft - 16, behavior: "smooth" });
+      if (focus) tab.focus();
+      if (scroll && root.getBoundingClientRect().top < 0) root.scrollIntoView({ block: "start" });
+      return tab.getAttribute("aria-controls")!;
+    };
+
+    const go = (id: string, focus = false, scroll = false) => {
+      history.replaceState(null, "", `#${select(id, focus, scroll)}`);
+    };
+
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", (e) => { e.preventDefault(); go(t.getAttribute("aria-controls")!); });
+      t.addEventListener("keydown", (e) => {
+        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (step === undefined) return;
+        e.preventDefault();
+        go(tabs[(i + step + tabs.length) % tabs.length].getAttribute("aria-controls")!, true);
+      });
+    });
+    root.querySelectorAll<HTMLAnchorElement>("[data-step]").forEach((a) =>
+      a.addEventListener("click", (e) => { e.preventDefault(); go(a.hash.slice(1), false, true); }),
+    );
+    window.addEventListener("hashchange", () => select(location.hash.slice(1)));
+    select(location.hash.slice(1));
+  }
+</script>
+
 <style>
-  .ei-sec h3 { margin: 32px 0 0; color: var(--trace); font-size: clamp(20px, 1vw + 16px, 26px); line-height: 1.1; font-weight: var(--v-sub-w); font-family: var(--v-sub); }
-  .ei-sec .ei-cols + .ei-cols { margin-top: 16px; }
-  .ei-sec .ei-lineup { margin-top: 32px; }
-  .ei-sec .ei-lineup + p { margin-top: 48px; }
+  /* Compact title: the page is reference material, so the content starts high. */
+  .rt-head { padding-top: clamp(24px, 4vw, 48px); padding-bottom: 16px; max-width: 1760px; margin-inline: auto; box-sizing: border-box; }
+  .rt-head h1 { margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(48px, 5vw + 24px, 104px); line-height: .9; }
+  .rt-lede { margin: 16px 0 0; max-width: 52ch; font-size: clamp(18px, .5vw + 16px, 22px); line-height: 1.5; color: var(--ink); }
+
+  /* Desktop: a sticky rail of parts beside the reading column. */
+  .rt { box-sizing: border-box; display: grid; grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); gap: clamp(32px, 4vw, 72px); padding-top: 40px; padding-bottom: 96px; max-width: 1760px; margin-inline: auto; }
+  .rt-rail { position: sticky; top: 24px; align-self: start; }
+  .rt-rail [role="tablist"] { display: flex; flex-direction: column; }
+  .rt-rail a { display: flex; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink-muted); font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; background: none; }
+  .rt-rail a:last-child { border-bottom: 1px solid var(--line); }
+  .rt-rail a:hover { color: var(--trace); }
+  .rt-rail a[aria-selected="true"] { color: var(--signal); }
+  .rt-num { font-family: 'Martian Mono', monospace; font-size: 11px; color: var(--trace); opacity: .7; }
+  .rt-rail a[aria-selected="true"] .rt-num { color: var(--ember); opacity: 1; }
+
+  /* Panels: the Rite ground with the part's accents; generous reading size. */
+  .rt-panel { background: var(--abyss); color: var(--ink); font-size: clamp(17px, .5vw + 14px, 23px); line-height: 1.6; }
+  .rt-panel + .rt-panel { margin-top: 96px; }
+  .is-tabbed .rt-panel + .rt-panel { margin-top: 0; }
+  .rt-panel > h2 { margin: 16px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--bone); font-size: clamp(30px, 1.8vw + 22px, 52px); line-height: 1.05; }
+  .rt-doc { margin-top: 32px; }
+  .rt-doc :global(p), .rt-doc :global(li) { max-width: 84ch; }
+  .rt-doc :global(p) { margin: 16px 0 0; }
+  .rt-doc :global(p:first-child) { margin-top: 0; }
+  .rt-doc :global(strong) { color: var(--bone); font-weight: 600; }
+  .rt-doc :global(a) { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .rt-doc :global(h3) { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--trace); font-size: clamp(22px, .8vw + 18px, 30px); line-height: 1.15; }
+  .rt-doc :global(h4) { margin: 40px 0 0; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--trace); }
+  .rt-doc :global(ul) { margin: 16px 0 0; padding-left: 1.1em; }
+  .rt-doc :global(li + li) { margin-top: 8px; }
+  .rt-doc :global(li::marker) { color: var(--trace); }
+  .rt-doc :global(blockquote) { margin: 16px 0 0; padding-left: 24px; border-left: 1px solid var(--signal); }
+
+  /* Tables: hairlines only, the first column as the row's name. */
+  .rt-doc :global(table) { width: 100%; margin-top: 24px; border-collapse: collapse; font-size: .9em; line-height: 1.5; }
+  .rt-doc :global(th) { text-align: left; vertical-align: bottom; padding: 0 24px 12px 0; font: 500 12px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--line-strong); }
+  .rt-doc :global(td) { vertical-align: top; padding: 16px 24px 16px 0; border-bottom: 1px solid var(--line); }
+  .rt-doc :global(td:first-child) { font-family: var(--v-sub); color: var(--trace); min-width: 9em; }
+  .rt-doc :global(td:first-child strong) { color: var(--trace); font-weight: var(--v-sub-w); }
+  .rt-doc :global(thead:has(th:empty)) { display: none; }
+
+  /* Previous and next part. */
+  .rt-step { display: flex; justify-content: space-between; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .rt-step a { display: flex; flex-direction: column; gap: 4px; color: var(--signal); text-decoration: none; font-family: var(--v-sub); font-size: clamp(20px, .6vw + 17px, 26px); }
+  .rt-step a.next { margin-left: auto; text-align: right; }
+  .rt-step small { font: 500 11px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
+  .rt-step a:hover { color: var(--trace); }
+  .rt:not(.is-tabbed) .rt-step { display: none; }
+
+  /* Phone and narrow tablet: the rail becomes a sticky bar that scrolls sideways,
+     and every table row stacks into a labelled block. */
+  @media (max-width: 900px) {
+    .rt { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 0; }
+    .rt-rail { position: sticky; top: 0; z-index: 3; margin-inline: calc(-1 * clamp(16px, 5vw, 64px)); padding-inline: clamp(16px, 5vw, 64px); background: var(--abyss); overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
+    .rt-rail::-webkit-scrollbar { display: none; }
+    .rt-rail [role="tablist"] { flex-direction: row; gap: 24px; width: max-content; }
+    .rt-rail a, .rt-rail a:last-child { border: 0; padding: 16px 0 14px; gap: 8px; }
+    .rt-rail a[aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--signal); }
+  }
+  @media (max-width: 720px) {
+    .rt-doc :global(table), .rt-doc :global(tbody), .rt-doc :global(tr), .rt-doc :global(td) { display: block; width: 100%; }
+    .rt-doc :global(thead) { display: none; }
+    .rt-doc :global(tr) { padding: 16px 0; border-top: 1px solid var(--line); }
+    .rt-doc :global(td) { padding: 4px 0; border: 0; min-width: 0; }
+    .rt-doc :global(td:first-child) { font-size: 1.15em; padding-bottom: 8px; }
+    .rt-doc :global(td[data-label]:not(:first-child))::before { content: attr(data-label); display: block; font: 500 11px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
+  }
 </style>

@@ -38,4 +38,6 @@ const { title, description, theme, voice, world, sections = [], noindex = false 
 
 <style is:global>
   body { margin: 0; background: var(--abyss); }
+  /* The kit's overflow: hidden breaks position: sticky; clip trims the same overflow without it (ds:proposal 002). */
+  .ei-page { overflow: clip; }
 </style>
