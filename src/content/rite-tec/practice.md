@@ -2,12 +2,6 @@
 
 **Rite Tec is trained through aerobic forms: a sport aerobics variant built on patterns and moves rather than fixed choreography, worked for cardio, rhythm and breath.**
 
-**The rod as a third point of mass.** A 3 to 5 kg rod is held as a third point beside the two feet, giving the structure something to organize around. It runs through every layer:
-
-- **Engine:** aerobic patterns and steps performed holding the rod.
-- **Transmission:** the rod makes alignment, frame and spiral routing visible and felt.
-- **Signal:** the rod becomes an actual staff, and any vertical or horizontal element in the space can play the same role for lines, planes, hits and stops.
-
 **Hand barbells, 1 to 3 kg,** carry the same patterns with load in the hands.
 
 **Body practice.** Training also includes:
