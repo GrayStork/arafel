@@ -1,0 +1,39 @@
+---
+import "../../design-system/eidolon-v1/css/eidolon.css";
+import NetBar from "../components/NetBar.astro";
+import Foot from "../components/Foot.astro";
+import type { WorldId } from "../worlds";
+
+interface Props {
+  title: string;
+  description?: string;
+  theme: string;
+  voice: string;
+  world?: WorldId;
+  sections?: { label: string; href: string; current?: boolean }[];
+}
+
+const { title, description, theme, voice, world, sections = [] } = Astro.props;
+---
+<!doctype html>
+<html lang="en" data-theme={theme} data-voice={voice}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="ei-page">
+      <NetBar world={world} sections={sections} />
+      <slot />
+      <Foot world={world} />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  body { margin: 0; background: var(--abyss); }
+</style>

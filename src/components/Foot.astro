@@ -1,0 +1,14 @@
+---
+import { DOMAIN, WORLDS, world as getWorld, type WorldId } from "../worlds";
+
+interface Props { world?: WorldId }
+const { world: current } = Astro.props;
+const here = current ? `${getWorld(current).name}.${DOMAIN}` : DOMAIN;
+---
+<footer class="ei-foot pad">
+  <span>{here} · Tel Aviv</span>
+  <nav>
+    {WORLDS.map((w) => <a href={w.base}>{w.name}</a>)}
+    <a href="/about/">about</a>
+  </nav>
+</footer>

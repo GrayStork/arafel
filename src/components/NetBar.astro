@@ -1,0 +1,25 @@
+---
+import { DOMAIN, WORLDS, world as getWorld, type WorldId } from "../worlds";
+
+interface Props {
+  world?: WorldId;
+  sections: { label: string; href: string; current?: boolean }[];
+}
+
+const { world: current, sections } = Astro.props;
+const w = current ? getWorld(current) : undefined;
+---
+<header class="ei-net">
+  <a class="ei-net__brand" href={w ? w.base : "/"}>
+    <img src={`/kit/img/faces/${w ? w.face : "eidolon-axis.webp"}`} alt="" />
+    <span class="ei-net__domain">{w ? <>{w.name}<b>.{DOMAIN}</b></> : <>{DOMAIN.split(".")[0]}<b>.{DOMAIN.split(".")[1]}</b></>}</span>
+  </a>
+  <nav class="ei-net__sections" aria-label="Sections">
+    {sections.map((s) => <a href={s.href} aria-current={s.current ? "page" : undefined}>{s.label}</a>)}
+  </nav>
+  <nav class="ei-net__worlds" aria-label={`${DOMAIN} network`}>
+    {WORLDS.map((x) => (
+      <a href={x.base} aria-current={x.id === current ? "true" : undefined}><i data-theme={x.dot}></i><span>{x.label}</span></a>
+    ))}
+  </nav>
+</header>

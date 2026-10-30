@@ -1,0 +1,10 @@
+---
+interface Props { kicker: string; title: string; lede?: string }
+const { kicker, title, lede } = Astro.props;
+---
+<section class="ei-hero pad">
+  <p class="ei-kicker">{kicker}</p>
+  <h1 class="ei-title ei-title--hit v-title" data-text={title}>{title}</h1>
+  {lede && <p class="lede">{lede}</p>}
+  <slot />
+</section>

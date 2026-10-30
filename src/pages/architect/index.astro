@@ -1,0 +1,9 @@
+---
+import Base from "../../layouts/Base.astro";
+import Hero from "../../components/Hero.astro";
+import { world } from "../../worlds";
+const w = world("architect");
+---
+<Base title="Architect · Arafel" theme={w.theme} voice={w.voice} world={w.id} sections={[{ label: "About", href: "/about/" }]}>
+  <Hero kicker="By day · platform architecture" title="Architect" lede="I design the systems underneath: platforms, infrastructure, data paths and the engines that run work. This page is in work." />
+</Base>

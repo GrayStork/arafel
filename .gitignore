@@ -1,0 +1,33 @@
+# Build output and dependencies
+node_modules/
+dist/
+.astro/
+public/kit/
+
+# Never committed
+*.zip
+__pycache__/
+.claude/
+
+# Process docs stay local
+CLAUDE.md
+HANDOFF.md
+docs/
+
+# Old HTML sketches, replaced by src/
+sites/
+
+# Design system: only what the site serves is public.
+# The generator, brand book, canon, partials and templates stay local.
+/design-system/*
+!/design-system/eidolon-v1/
+/design-system/eidolon-v1/*
+!/design-system/eidolon-v1/css/
+!/design-system/eidolon-v1/img/
+# Photos are site assets: all of them are public.
+# Faces: list each one a page uses (src/worlds.ts and src/components/NetBar.astro).
+/design-system/eidolon-v1/img/faces/*
+!/design-system/eidolon-v1/img/faces/eidolon-axis.webp
+!/design-system/eidolon-v1/img/faces/eidolon-axis-arch.webp
+!/design-system/eidolon-v1/img/faces/eidolon-club.webp
+!/design-system/eidolon-v1/img/faces/eidolon-rite.webp

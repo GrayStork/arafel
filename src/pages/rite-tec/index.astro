@@ -1,0 +1,9 @@
+---
+import Base from "../../layouts/Base.astro";
+import Hero from "../../components/Hero.astro";
+import { world } from "../../worlds";
+const w = world("rite-tec");
+---
+<Base title="Rite Tec · Arafel" theme={w.theme} voice={w.voice} world={w.id}>
+  <Hero kicker="A dark-electronic club dance technique" title="Rite Tec" lede="Four layers, one body. The full page is coming." />
+</Base>

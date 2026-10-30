@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import { WORLDS } from "../worlds";
+---
+<Base title="Arafel" theme="axis" voice="prism" sections={[{ label: "About", href: "/about/" }]}>
+  <Hero kicker="One person · two halves · one rite" title="Arafel" lede="Architect by day. Eidolon by night. Rite Tec joins them.">
+    <div class="actions">
+      {WORLDS.map((w) => <a class="ei-btn ei-btn--prism" href={w.base}><span class="ei-btn__label" data-text={w.label}>{w.label}</span></a>)}
+    </div>
+  </Hero>
+</Base>
