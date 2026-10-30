@@ -12,8 +12,6 @@ Rite Tec draws on seven influences; each contributes one job, which is the justi
 | Contemporary and theatrical jazz | Modern dance (Graham contraction and release, Humphrey fall and recovery) and theatrical jazz (Jack Cole, Bob Fosse) | Contractions, falls, reaches: dramatic peaks, level changes, emotional weight | Narrative acting, facial emoting, continuous lyrical flow |
 | Butoh | Japanese avant-garde dance founded by Tatsumi Hijikata and Kazuo Ohno; the first piece, Kinjiki, premiered in 1959 | Dissonance as technique, mask changes, slow drift, sudden violent bursts, transformation | Full white body paint as default; techno and dark styling instead, white masks as an option |
 
-**Precedent:** Tecktonik (French electro dance) shows a club-born fusion style can become a named style. It grew in the 2000s at the Metropolis club in the Paris suburbs, out of a mix of jump, hard and electro styles arriving from across Europe. Its arm work feeds Rite Tec's quick hand work. Rite Tec differs by grounding the fusion in a body-mechanics system rather than a scene look.
-
 **What is new in Rite Tec:** the parts exist separately; the claim is the integration. Popping usually isolates; Neijia usually connects. Rite Tec uses connection to *power* the isolation: the hit is a visible endpoint of a whole-body spiral.
 
 
