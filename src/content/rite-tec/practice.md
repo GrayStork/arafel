@@ -12,7 +12,7 @@
 
 **Body practice.** Training also includes:
 
-- Basic qigong.
+- Basic Qigong.
 - I Liq Chuan level 1 drills for dimensionality and body mechanics (directions, alignment and spiral routing, as described above).
 - Flexibility drills that work plasticity and dimensionality to rhythm, such as directional popping, where hands or legs hit on the beat.
 
@@ -35,7 +35,7 @@ The aim is precise control and coordination of each body part in space, so the m
 **Rite Tec treats the dance floor as a mindfulness practice: techno supplies a slowly changing, repetitive field, and the martial training supplies the attention to meet each change as it happens.**
 
 - **Techno is built for presence.** In hypnotic techno the effect comes from repetition, space and gradual variation more than from tempo. The dancer cannot plan against it, only notice the next change.
-- **The martial arts train that attention.** I Liq Chuan builds on taiji and Chan principles of non-assertion, non-resistance and the present moment; Sam Chin describes the aim as perceiving each moment impartially, staying here and now. In Rite Tec the partner is the track: listen, match, respond, never force.
+- **The martial arts train that attention.** I Liq Chuan builds on Taiji and Chan principles of non-assertion, non-resistance and the present moment; Sam Chin describes the aim as perceiving each moment impartially, staying here and now. In Rite Tec the partner is the track: listen, match, respond, never force.
 - **Control of dimensions and direction.** Presence becomes visible as spatial control: every movement resolves onto a known axis (six directions, centerline, diagonals) and arrives on purpose.
 - **Control of mass.** At every moment the dancer knows where the weight is: empty and full in the legs, the rod as third point of mass, the root before a release, the fall given and taken back. Controlled mass is what lets precision survive inside trance.
 - **The rite.** Repetition, attention and control turn a club set into a ritual in which the dancer is lost in the music and fully in charge of the body at once. That paradox is one more form of Rite Tec's dissonance.
