@@ -35,8 +35,8 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
     <h1 class="ei-title ei-title--hit v-title" data-text="Rite Tec">Rite Tec</h1>
     <p class="rt-lede">Martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog.</p>
   </header>
-  <Ornament kind="imperial" />
   </div>
+  <div class="rt-edge"><Ornament kind="imperial" /></div>
 
   <div class="rt pad" data-tabs>
     <nav class="rt-rail" aria-label="Rite Tec">
@@ -111,9 +111,11 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
   /* The Imperial voice's contour fog behind the title, as on its swatch; lines stay 1px at any width. */
   .rt-top { position: relative; isolation: isolate; }
   .rt-top :global(.ei-dissolve path) { vector-effect: non-scaling-stroke; }
+  /* The frieze sits on the fog's bottom edge: its center line on the edge. */
+  .rt-edge :global(.frieze) { padding-top: 0; margin-top: -17px; position: relative; }
 
   /* Compact title: the page is reference material, so the content starts high. */
-  .rt-head { padding-top: clamp(24px, 4vw, 48px); padding-bottom: 16px; max-width: 1760px; margin-inline: auto; box-sizing: border-box; }
+  .rt-head { padding-top: clamp(16px, 3vw, 32px); padding-bottom: 40px; max-width: 1760px; margin-inline: auto; box-sizing: border-box; }
   .rt-head h1 { margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(48px, 5vw + 24px, 104px); line-height: .9; }
   .rt-lede { margin: 16px 0 0; max-width: 52ch; font-size: clamp(18px, .5vw + 16px, 22px); line-height: 1.5; color: var(--ink); }
 
