@@ -1,5 +1,7 @@
 ---
 // A voice ornament from the kit, inline so it reads the palette's variables.
+// The Imperial frieze repeats as a pattern across the full width, centered on the page.
+// Place it outside padded blocks so it runs edge to edge.
 import { nextSuffix, scopeIds } from "../svg";
 import imperial from "../svg/ornament-imperial-frieze.svg?raw";
 import prism from "../svg/ornament-prism-diamond.svg?raw";
@@ -11,6 +13,25 @@ const SVG = { imperial, prism, "relay-band": relayBand, "relay-ground": relayGro
 
 interface Props { kind: keyof typeof SVG }
 const { kind } = Astro.props;
-const svg = scopeIds(SVG[kind], nextSuffix());
+const suffix = nextSuffix();
+
+// The kit draws the frieze unit (600 x 60) at 34px high.
+const H = 34, scale = H / 60, unit = 600 * scale;
+let frieze = "";
+if (kind === "imperial") {
+  const inner = imperial.slice(imperial.indexOf(">") + 1, imperial.lastIndexOf("</svg>"));
+  // Two copies, centered on the tile's edges, so a tile edge at 50% centers a motif on the page.
+  const at = (x: number) => inner.replace('transform="translate(300.0 30.0)"', `transform="translate(${x} 30)"`);
+  frieze = `<defs><pattern id="frieze-${suffix}" patternUnits="userSpaceOnUse" x="50%" y="0" width="${unit}" height="${H}"><g transform="scale(${scale})">${at(0)}${at(600)}</g></pattern></defs><rect width="100%" height="100%" fill="url(#frieze-${suffix})"/>`;
+}
+const svg = kind === "imperial" ? "" : scopeIds(SVG[kind], suffix);
 ---
-<Fragment set:html={svg} />
+{kind === "imperial"
+  ? <div class="frieze"><svg class="vfr" width="100%" height={H} aria-hidden="true" set:html={frieze} /></div>
+  : <Fragment set:html={svg} />}
+
+<style>
+  /* Full viewport width with room to breathe above and below. */
+  .frieze { padding-block: clamp(32px, 4vw, 48px) clamp(40px, 5vw, 64px); }
+  .frieze svg { display: block; }
+</style>
