@@ -2,30 +2,23 @@
 import Base from "../../layouts/Base.astro";
 import DissolveStripe from "../../components/DissolveStripe.astro";
 import { world } from "../../worlds";
-import * as overview from "../../content/rite-tec/overview.md";
-import * as mechanics from "../../content/rite-tec/mechanics.md";
-import * as space from "../../content/rite-tec/space.md";
-import * as footwork from "../../content/rite-tec/footwork.md";
-import * as vocabulary from "../../content/rite-tec/vocabulary.md";
+import * as style from "../../content/rite-tec/style.md";
+import * as body from "../../content/rite-tec/body.md";
+import * as moves from "../../content/rite-tec/moves.md";
 import * as practice from "../../content/rite-tec/practice.md";
-import * as music from "../../content/rite-tec/music.md";
-import * as lineage from "../../content/rite-tec/lineage.md";
+import * as roots from "../../content/rite-tec/roots.md";
 
 const w = world("rite-tec");
 
 // One tab per part of the style, each on the black Rite ground in its own variant.
 const tabs = [
-  { id: "overview", label: "Overview", theme: "rite", title: "Definition and pitch", doc: overview },
-  { id: "mechanics", label: "Mechanics", theme: "rite-snake", title: "Neijia, bone and fascia", doc: mechanics },
-  { id: "space", label: "Space", theme: "rite-axis", title: "Directionality and space", doc: space },
-  { id: "footwork", label: "Footwork", theme: "rite-club", title: "Footwork and training", doc: footwork },
-  { id: "vocabulary", label: "Vocabulary", theme: "rite-love", title: "Vocabulary and techniques", doc: vocabulary },
-  { id: "practice", label: "Practice", theme: "rite", title: "Mind, body and the rite", doc: practice },
-  { id: "music", label: "Music", theme: "rite-club", title: "Music and aesthetic frame", doc: music },
-  { id: "lineage", label: "Lineage", theme: "rite-axis", title: "Lineage and influences", doc: lineage },
+  { id: "style", label: "Style", theme: "rite", title: "What Rite Tec is", doc: style },
+  { id: "body", label: "Body", theme: "rite-snake", title: "Mechanics and space", doc: body },
+  { id: "moves", label: "Moves", theme: "rite-club", title: "Footwork", doc: moves },
+  { id: "practice", label: "Practice", theme: "rite-axis", title: "Training and attention", doc: practice },
+  { id: "roots", label: "Roots", theme: "rite-love", title: "Lineage and music", doc: roots },
 ];
 const num = (i: number) => String(i + 1).padStart(2, "0");
-const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6).toUpperCase()}${t.slice(6)}`);
 ---
 <Base
   title="Rite Tec · Arafel"
@@ -55,7 +48,7 @@ const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6)
     <div class="rt-panels">
       {tabs.map((t, i) => (
         <section role="tabpanel" id={t.id} aria-labelledby={`tab-${t.id}`} data-theme={t.theme} class="rt-panel">
-          <p class="ei-kicker">{num(i)} · {variant(t.theme)}</p>
+          <p class="ei-kicker">{num(i)} / {num(tabs.length - 1)}</p>
           <h2 class="v-sub">{t.title}</h2>
           <div class="rt-doc"><t.doc.Content /></div>
           <nav class="rt-step" aria-label="Next and previous">
@@ -74,7 +67,6 @@ const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6)
   if (root) {
     const tabs = [...root.querySelectorAll<HTMLAnchorElement>('[role="tab"]')];
     const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
-    const rail = root.querySelector<HTMLElement>(".rt-rail")!;
     root.classList.add("is-tabbed");
 
     const select = (id: string, focus = false, scroll = false) => {
@@ -85,8 +77,6 @@ const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6)
         t.tabIndex = on ? 0 : -1;
       });
       panels.forEach((p) => (p.hidden = p.id !== tab.getAttribute("aria-controls")));
-      // Keep the current tab in view inside the phone's scrolling bar.
-      rail.scrollTo({ left: tab.offsetLeft - 16, behavior: "smooth" });
       if (focus) tab.focus();
       if (scroll && root.getBoundingClientRect().top < 0) root.scrollIntoView({ block: "start" });
       return tab.getAttribute("aria-controls")!;
@@ -168,11 +158,14 @@ const variant = (t: string) => (t === "rite" ? "Rite" : `Rite · ${t.slice(5, 6)
      and every table row stacks into a labelled block. */
   @media (max-width: 900px) {
     .rt { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 0; }
-    .rt-rail { position: sticky; top: 0; z-index: 3; margin-inline: calc(-1 * clamp(16px, 5vw, 64px)); padding-inline: clamp(16px, 5vw, 64px); background: var(--abyss); overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); }
-    .rt-rail::-webkit-scrollbar { display: none; }
-    .rt-rail [role="tablist"] { flex-direction: row; gap: 24px; width: max-content; }
+    .rt-rail { position: sticky; top: 0; z-index: 3; margin-inline: calc(-1 * clamp(16px, 5vw, 64px)); padding-inline: clamp(16px, 5vw, 64px); background: var(--abyss); border-bottom: 1px solid var(--line); }
+    .rt-rail [role="tablist"] { flex-direction: row; justify-content: space-between; gap: 8px; }
     .rt-rail a, .rt-rail a:last-child { border: 0; padding: 16px 0 14px; gap: 8px; }
     .rt-rail a[aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--signal); }
+  }
+  @media (max-width: 560px) {
+    .rt-num { display: none; }
+    .rt-rail a { font-size: 12px; letter-spacing: .1em; }
   }
   @media (max-width: 720px) {
     .rt-doc :global(table), .rt-doc :global(tbody), .rt-doc :global(tr), .rt-doc :global(td) { display: block; width: 100%; }
