@@ -1,40 +1,41 @@
-### Footwork
+The footwork has three families: fitness steps for rhythm, martial steps for travel and turning, club steps for syncopation. The fusion is the point: aerobic patterns danced with martial weight discipline. On top of it, force is projected into chosen directions, at three ranges, sometimes through a rod.
 
-Rite Tec footwork has three families: **fitness steps for rhythm, martial steps for travel and turning, club steps for syncopation.** The fusion is the distinctive part: aerobic patterns executed with martial weight discipline.
+### Footwork
 
 | Family | Steps | What it does |
 | --- | --- | --- |
-| Fitness | Basic, V-step, grapevine, mambo, knee-up, pivot turn | Constant rhythmic floor; symmetric, countable, repeatable |
-| House (directional) | Shuffle, loose legs, crossroads, salsa step and salsa hop, heel-toe, farmer | Turns aerobic patterns into directional travel, the way Latin dancers move across the floor, with real house leg technique |
-| Martial: weight shift | Empty and full stepping; bow stance and empty stance | The foot lands empty, weight arrives after; silent, controlled landings that can become a root |
-| Martial: turn | Turning stance (轉馬 jun ma): the whole stance rotates as one unit, pivoting on heels, balls or mid-foot depending on lineage | Pivots where chest, arms and centerline turn as a block, robot-style |
-| Martial: advance | Stepping and turning while holding the body's central axis | Traveling hits: the structure arrives intact |
-| Club | Heel-toe, kicks, shuffles, stomps, cross-steps | Syncopation and texture over the base step |
+| Fitness | Basic, V-step, grapevine, mambo, knee-up, pivot turn | A constant rhythmic floor. Symmetric, countable, repeatable. |
+| House | Shuffle, loose legs, crossroads, salsa step and hop, heel-toe, farmer | Turns aerobic patterns into directional travel across the floor. |
+| Weight shift | Empty and full stepping, bow stance, empty stance | The foot lands empty and the weight arrives after. Silent, controlled landings that can become a root. |
+| Turn | The whole stance rotates as one unit | Chest, arms and centerline turn as a block, robot-style. |
+| Advance | Stepping and turning while holding the central axis | Traveling hits. The structure arrives intact. |
+| Club | Heel-toe, kicks, shuffles, stomps, cross-steps | Syncopation and texture over the base step. |
 
 ### Projection
 
-Force driven from the legs and the whole body into a chosen direction, the way martial arts project power into a line. It can come out:
+| Form | What it is |
+| --- | --- |
+| Release | Force from the legs and the whole body, let go suddenly and explosively into a line. |
+| Empty hand | The same projection with nothing in the hands. |
+| Rod | The projection carried through the rod. |
+| Palm | Short palm strikes that end the spiral at the hand. |
+| Cross | Fast diagonal and crossing hand work, powered from the legs. |
+| Reel | Legwork combined with projections. The projection leaves one hand and rolls on through the other, as far as the body allows. |
 
-- as a sudden, explosive release, in the manner of Fa Jin
-- fully empty-handed
-- through the rod
-- through palm techniques from I Liq Chuan and Wing Chun
-- with crossing hand work, fast diagonal lines powered from the legs
-
-**Reels.** Legwork combined with projections. A projection can roll through the hands: it leaves one hand and carries on through the other, as far as the body allows.
-
-#### Ranges
+### Ranges
 
 | Range | How it works |
 | --- | --- |
-| Long | Empty-handed, the body fully stretched, as in contemporary dance. |
-| Medium | The range of control and strength. The hand can release fully, as in Fa Jin, or lock instead, which leans towards robot and creates distortion, dissonance and illusions that trick the eye. |
+| Long | Empty-handed, the body fully stretched. |
+| Medium | The range of control and strength. The hand releases fully, or locks instead, which leans towards robot and creates distortion, dissonance and illusions that trick the eye. |
 | Short | Also with the rod. The most ritual range: it turns inward and closes the body, following its natural form. |
 
 ### The rod
 
-A 3 to 5 kg rod is held as a third point beside the two feet, giving the structure something to organize around. It runs through every layer:
+A rod of 3 to 5 kg is held as a third point beside the two feet. It gives the structure something to organize around.
 
-- **Engine:** aerobic patterns and steps performed holding the rod.
-- **Transmission:** the rod makes alignment, frame and spiral routing visible and felt.
-- **Signal:** the rod becomes an actual staff, and any vertical or horizontal element in the space can play the same role for lines, planes, hits and stops.
+| Layer | With the rod |
+| --- | --- |
+| Engine | Aerobic patterns and steps performed holding the rod. |
+| Transmission | Alignment, frame and the spiral become visible and felt. |
+| Signal | The rod becomes a staff. Any vertical or horizontal element in the space can play the same role for lines, planes, hits and stops. |
