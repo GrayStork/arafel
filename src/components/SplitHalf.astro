@@ -1,0 +1,30 @@
+---
+// One half of a Split, set strictly in its section's voice:
+// kicker, title in the voice's title face, subhead in its subhead face, reading text.
+// The hit goes on the title only when it is the page h1.
+import Button from "./Button.astro";
+
+interface Props {
+  kicker: string;
+  title: string;
+  sub?: string;
+  text?: string;
+  action?: { label: string; href: string };
+  h1?: boolean;
+}
+const { kicker, title, sub, text, action, h1 = false } = Astro.props;
+---
+<p class="ei-kicker">{kicker}</p>
+{h1
+  ? <h1 class="ei-title ei-title--hit v-title" data-text={title}>{title}</h1>
+  : <h2 class="half-title v-title">{title}</h2>}
+{sub && <p class="half-sub v-sub">{sub}</p>}
+{text && <p class="v-read">{text}</p>}
+<slot />
+{action && <><div class="grow"></div><Button label={action.label} href={action.href} /></>}
+
+<style>
+  /* Same scale as the kit's .ei-split h1, so an h2 title keeps the title face. */
+  .half-title { margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(44px, 4vw + 24px, 88px); line-height: .92; }
+  .half-sub { margin: 8px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--trace); font-size: 22px; }
+</style>

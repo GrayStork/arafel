@@ -1,9 +1,146 @@
 ---
 import Base from "../../layouts/Base.astro";
 import Hero from "../../components/Hero.astro";
+import Sec from "../../components/Sec.astro";
+import Mood from "../../components/Mood.astro";
+import Cols from "../../components/Cols.astro";
+import Fig from "../../components/Fig.astro";
+import Litany from "../../components/Litany.astro";
+import Lineup from "../../components/Lineup.astro";
+import Button from "../../components/Button.astro";
+import Actions from "../../components/Actions.astro";
 import { world } from "../../worlds";
+
 const w = world("rite-tec");
+
+// Each layer sits on the black Rite ground in the variant of its mood.
+const layers = [
+  {
+    id: "engine", theme: "rite-club", photo: "kneel.webp",
+    kicker: "Layer 01 · The legs", title: "The engine",
+    text: "Aerobic step patterns and techno legwork keep a constant rhythmic floor. One weight change per beat or subdivision. It never stops.",
+  },
+  {
+    id: "transmission", theme: "rite-snake", photo: "forest.webp",
+    kicker: "Layer 02 · Spine, hips, fascia", title: "The transmission",
+    text: "Taiji, I Liq Chuan and wing chun route force from the feet through the kua and the spine as a spiral. The upper body moves as a consequence of the base, not on its own.",
+  },
+  {
+    id: "signal", theme: "rite-love", photo: "hazeblue.webp",
+    kicker: "Layer 03 · Arms, hands, head", title: "The signal",
+    text: "Popping hits, robotic stops, mime planes and isolations make the transmitted force visible. Sharp, precise accents at the end of the spiral.",
+  },
+  {
+    id: "drama", theme: "rite", photo: "mimefog.webp",
+    kicker: "Layer 04 · The whole body, sparingly", title: "The drama",
+    text: "Contractions, falls and reaches from contemporary and jazz dance, butoh masks and slow drift. They break the mechanical frame open at the peaks and drops and give the routine its weight.",
+  },
+];
+
+const lineage = [
+  { time: "01", name: "Popping", sub: "Hits, waves, robot, mime and dime stops. Credited to Boogaloo Sam and the Electric Boogaloos, Fresno, 1977." },
+  { time: "02", name: "The cypher", sub: "The format: improvised, call and response, the dancer at the center." },
+  { time: "03", name: "Aerobics", sub: "Patterns, endurance, rhythm and breath, after Gilad Janklowicz and Bodies in Motion." },
+  { time: "04", name: "Industrial", sub: "Cybergoth, industrial dance and Tecktonik: the music world, the stomps, one move per beat, quick crossing hand work." },
+  { time: "05", name: "Neijia", sub: "Taiji, I Liq Chuan and wing chun: spiral routing, rooting, empty and full, centerline, awareness." },
+  { time: "06", name: "Contemporary", sub: "Graham contraction and release, Humphrey fall and recovery, the theatrical jazz of Cole and Fosse." },
+  { time: "07", name: "Butoh", sub: "Hijikata and Ohno, from 1959: dissonance, mask changes, slow drift, sudden bursts." },
+];
 ---
-<Base title="Rite Tec · Arafel" theme={w.theme} voice={w.voice} world={w.id}>
-  <Hero kicker="A dark-electronic club dance technique" title="Rite Tec" lede="Four layers, one body. The full page is coming." />
+<Base
+  title="Rite Tec · Arafel"
+  description="Rite Tec: martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog."
+  theme={w.theme}
+  voice={w.voice}
+  world={w.id}
+  sections={[
+    { label: "Layers", href: "#layers" },
+    { label: "Name", href: "#name" },
+    { label: "Lineage", href: "#lineage" },
+  ]}
+>
+  <Hero
+    kicker="A dark-electronic club dance technique"
+    title="Rite Tec"
+    lede="Martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog."
+    photo="mannequin.webp"
+  >
+    <Actions>
+      <Button label="The layers" href="#layers" />
+      <Button label="Lineage" href="#lineage" />
+    </Actions>
+  </Hero>
+
+  <Mood theme="rite" band>
+    <Sec kicker="Definition" title="Four layers, one body">
+      <p>Rite Tec is a club dance technique for the dark end of the night: witch house, darkwave, EBM, industrial, techno, experimental electronic and IDM.</p>
+      <p>Street illusion on the upper body. A stepping engine on the legs. Chinese martial arts mechanics join them, sending every movement from the ground through one spiral of bone and fascia. A theatrical layer from contemporary dance, jazz and butoh carries the peaks.</p>
+      <Litany kind="turn" lines={["Force", "starts at", "the floor", "coils through", "the spine", "and hits"]} turn={2} size="section" />
+    </Sec>
+  </Mood>
+
+  <Mood theme="rite-axis" band id="philosophy">
+    <Sec kicker="Philosophy · Rite · Axis" title="Answer the beat">
+      <p>Most club dancing rides the beat. Rite Tec is built to answer it.</p>
+      <p>The parts exist on their own. The claim is the joining. Popping isolates, neijia connects. Rite Tec uses the connection to power the isolation: the hit is the visible end of a whole-body spiral.</p>
+      <Litany kind="offset" lines={["Listen", "match", "respond", "never", "force"]} turn={4} size="section" />
+    </Sec>
+  </Mood>
+
+  <div id="layers">
+    {layers.map((l) => (
+      <Mood theme={l.theme} band id={l.id}>
+        <Sec>
+          <Cols>
+            <div>
+              <p class="ei-kicker">{l.kicker}</p>
+              <h2 class="v-sub">{l.title}</h2>
+              <p>{l.text}</p>
+            </div>
+            <Fig photo={l.photo} />
+          </Cols>
+        </Sec>
+      </Mood>
+    ))}
+  </div>
+
+  <Mood theme="rite" band id="name">
+    <Sec kicker="The name" title="Rite and Tec">
+      <Cols>
+        <div>
+          <h3 class="v-sub">Rite</h3>
+          <p>Ritual, repetition and trance. The club as ceremony.</p>
+        </div>
+        <div>
+          <h3 class="v-sub">Tec</h3>
+          <p>Technique, techno and tectonic. Plates moving under pressure.</p>
+        </div>
+      </Cols>
+      <Cols>
+        <div>
+          <h3 class="v-sub">Dissonance</h3>
+          <p>A technique I reach for at chosen moments. Machine and body, precision and collapse, a calm face on a violent body, ultra-slow movement over a fast track. It keeps the audience from settling.</p>
+        </div>
+        <div>
+          <h3 class="v-sub">Invocation</h3>
+          <p>Whatever the vocabulary, the dance reads as conjuring, invoking or directing forces. A power surge, a prayer, an act of zeal. With the fog and the dark mood, this makes the club a ceremony rather than a dance floor.</p>
+        </div>
+      </Cols>
+    </Sec>
+  </Mood>
+
+  <Mood theme="rite" id="lineage">
+    <Sec kicker="Lineage" title="Seven influences, one job each">
+      <p>Each tradition earns its place with one job. What it brings stays. The rest is left behind.</p>
+      <Lineup kind="index" items={lineage} />
+      <p>Tecktonik, born at the Metropolis club outside Paris in the 2000s, showed that a club fusion can become a named technique. Rite Tec grounds its fusion in a body-mechanics system instead of a scene look.</p>
+    </Sec>
+  </Mood>
 </Base>
+
+<style>
+  .ei-sec h3 { margin: 32px 0 0; color: var(--trace); font-size: clamp(20px, 1vw + 16px, 26px); line-height: 1.1; font-weight: var(--v-sub-w); font-family: var(--v-sub); }
+  .ei-sec .ei-cols + .ei-cols { margin-top: 16px; }
+  .ei-sec .ei-lineup { margin-top: 32px; }
+  .ei-sec .ei-lineup + p { margin-top: 48px; }
+</style>

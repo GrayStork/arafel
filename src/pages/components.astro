@@ -7,6 +7,7 @@ import Mood from "../components/Mood.astro";
 import Cols from "../components/Cols.astro";
 import Fig from "../components/Fig.astro";
 import Split from "../components/Split.astro";
+import SplitHalf from "../components/SplitHalf.astro";
 import Litany from "../components/Litany.astro";
 import Lineup from "../components/Lineup.astro";
 import Meta from "../components/Meta.astro";
@@ -47,21 +48,9 @@ const lineup = [
     </Sec>
   </Mood>
 
-  <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }} seam={["eidolon-axis-arch.webp", "eidolon-club.webp"]}>
-    <Fragment slot="day">
-      <p class="ei-kicker">Split · by day</p>
-      <h2 class="v-title">Architect</h2>
-      <p>The day half.</p>
-      <div class="grow"></div>
-      <Button label="Day" href="/architect/" />
-    </Fragment>
-    <Fragment slot="night">
-      <p class="ei-kicker">Split · by night</p>
-      <h2 class="v-title">Eidolon</h2>
-      <p>The night half.</p>
-      <div class="grow"></div>
-      <Button label="Night" href="/eidolon/" />
-    </Fragment>
+  <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }}>
+    <SplitHalf slot="day" kicker="Split · by day" title="Architect" sub="Systems, platforms, engines" text="The day half, in Prism." action={{ label: "Day", href: "/architect/" }} />
+    <SplitHalf slot="night" kicker="Split · by night" title="Eidolon" sub="Dance, ritual, sound" text="The night half, in Imperial." action={{ label: "Night", href: "/eidolon/" }} />
   </Split>
 
   <Mood theme="rite-axis" voice="relay" band>

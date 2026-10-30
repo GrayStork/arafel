@@ -6,7 +6,7 @@ const { world: current } = Astro.props;
 const here = current ? `${getWorld(current).name}.${DOMAIN}` : DOMAIN;
 ---
 <footer class="ei-foot pad">
-  <span>{here} · Tel Aviv</span>
+  <span>{here}</span>
   <nav>
     {WORLDS.map((w) => <a href={w.base}>{w.name}</a>)}
     <a href="/about/">about</a>
