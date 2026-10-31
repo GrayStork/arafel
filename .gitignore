@@ -31,3 +31,7 @@ sites/
 !/design-system/eidolon-v1/img/faces/eidolon-axis-arch.webp
 !/design-system/eidolon-v1/img/faces/eidolon-club.webp
 !/design-system/eidolon-v1/img/faces/eidolon-rite.webp
+
+# Text-editing guide and log stay local
+src/content/AGENTS.md
+src/content/NOTES.md

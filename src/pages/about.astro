@@ -1,7 +1,18 @@
 ---
+// About: one title over both halves, then the day half and the night half side by side.
 import Base from "../layouts/Base.astro";
-import Hero from "../components/Hero.astro";
+import PageHead from "../components/PageHead.astro";
+import Split from "../components/Split.astro";
+import SplitHalf from "../components/SplitHalf.astro";
+import * as page from "../content/pages/about.md";
+
+const f = page.frontmatter;
 ---
-<Base title="About · Arafel" theme="axis-arch" voice="prism" sections={[{ label: "About", href: "/about/", current: true }]}>
-  <Hero kicker="Day and night" title="About" lede="Two halves of one person. The story between them is being written." />
+<Base title={f.title} description={f.description} theme="axis" voice="prism" sections={[{ label: "About", href: "/about/", current: true }]}>
+  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice="prism" />
+  <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }}>
+    <SplitHalf slot="day" {...f.day} />
+    <SplitHalf slot="night" {...f.night} />
+  </Split>
+  <main class="pg wrap pad grid2"><div class="doc main"><page.Content /></div></main>
 </Base>

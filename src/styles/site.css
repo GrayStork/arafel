@@ -1,0 +1,56 @@
+/* Site layout on top of the kit stylesheet. Type and colour come from the voice and palette
+   variables only; this file adds the shared grid, the page header and reading text. */
+
+/* One container and one two-column grid for every page, so the header lines up with the content:
+   a narrow left column (labels, the tab rail) and the reading column. */
+.wrap { box-sizing: border-box; max-width: 1760px; margin-inline: auto; }
+.grid2 { display: grid; grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); column-gap: clamp(32px, 4vw, 72px); }
+.grid2 > .span { grid-column: 1 / -1; }
+.grid2 > .main { grid-column: 2; }
+@media (max-width: 900px) {
+  .grid2 { grid-template-columns: minmax(0, 1fr); }
+  .grid2 > .main { grid-column: 1; }
+}
+
+/* Page header: fog band with kicker, title and lede; the voice's ornament sits on its bottom edge. */
+.ph { position: relative; isolation: isolate; }
+.ph .ei-dissolve path { vector-effect: non-scaling-stroke; }
+.ph-head { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(48px, 5vw, 72px); }
+.ph-head h1 { text-wrap: balance; margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(40px, 4vw + 24px, 104px); line-height: .95; }
+.ph-lede { margin: 24px 0 0; max-width: 56ch; font-size: clamp(18px, .5vw + 16px, 23px); line-height: 1.5; color: var(--ink); }
+.ph-edge { position: relative; }
+div.ph-edge .frieze { padding-top: 0; margin-top: -17px; }
+div.ph-edge .ei-prismsep { height: 48px; margin: -24px 0 0; }
+.ph-edge--prism { padding-bottom: clamp(40px, 5vw, 64px); }
+
+/* Reading text, set by the voice; tables use hairlines only and stack on a phone. */
+.doc { color: var(--ink); font-size: clamp(17px, .5vw + 14px, 23px); line-height: 1.6; }
+.doc p, .doc li { max-width: 84ch; }
+.doc p { margin: 16px 0 0; }
+.doc > :first-child { margin-top: 0; }
+.doc strong { color: var(--bone); font-weight: 600; }
+.doc a { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.doc a:hover { color: var(--trace); }
+.doc h2 { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--bone); font-size: clamp(30px, 1.8vw + 22px, 52px); line-height: 1.05; }
+.doc h3 { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--trace); font-size: clamp(22px, .8vw + 18px, 30px); line-height: 1.15; }
+.doc h4 { margin: 40px 0 0; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--trace); }
+.doc ul { margin: 16px 0 0; padding-left: 1.1em; }
+.doc li + li { margin-top: 8px; }
+.doc li::marker { color: var(--trace); }
+.doc table { width: 100%; margin-top: 24px; border-collapse: collapse; font-size: .9em; line-height: 1.5; }
+.doc th { text-align: left; vertical-align: bottom; padding: 0 24px 12px 0; font: 500 12px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--line-strong); }
+.doc td { vertical-align: top; padding: 16px 24px 16px 0; border-bottom: 1px solid var(--line); }
+.doc td:first-child { font-family: var(--v-sub); color: var(--trace); min-width: 9em; }
+.doc td:first-child strong { color: var(--trace); font-weight: var(--v-sub-w); }
+.doc thead:has(th:empty) { display: none; }
+@media (max-width: 720px) {
+  .doc table, .doc tbody, .doc tr, .doc td { display: block; width: 100%; }
+  .doc thead { display: none; }
+  .doc tr { padding: 16px 0; border-top: 1px solid var(--line); }
+  .doc td { padding: 4px 0; border: 0; min-width: 0; }
+  .doc td:first-child { font-size: 1.15em; padding-bottom: 8px; }
+  .doc td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; font: 500 11px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
+}
+
+/* Body of a page below the header. */
+.pg { padding-bottom: 96px; }

@@ -1,9 +1,7 @@
 ---
-import Base from "../../layouts/Base.astro";
-import Hero from "../../components/Hero.astro";
+import TextPage from "../../components/TextPage.astro";
+import * as page from "../../content/pages/eidolon.md";
 import { world } from "../../worlds";
 const w = world("eidolon");
 ---
-<Base title="Eidolon · Arafel" theme={w.theme} voice={w.voice} world={w.id} sections={[{ label: "About", href: "/about/" }]}>
-  <Hero kicker="By night · dance, ritual, sound" title="Eidolon" lede="The phantom double that steps into the fog when the drawing board closes. This page is in work." />
-</Base>
+<TextPage page={page} theme={w.theme} voice="imperial" world={w.id} sections={[{ label: "About", href: "/about/" }]} />

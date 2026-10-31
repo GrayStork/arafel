@@ -1,44 +1,31 @@
 ---
 import Base from "../../layouts/Base.astro";
-import Ornament from "../../components/Ornament.astro";
-import Fog from "../../components/Fog.astro";
+import PageHead from "../../components/PageHead.astro";
 import { world } from "../../worlds";
-import * as style from "../../content/rite-tec/style.md";
-import * as body from "../../content/rite-tec/body.md";
-import * as moves from "../../content/rite-tec/moves.md";
-import * as practice from "../../content/rite-tec/practice.md";
-import * as roots from "../../content/rite-tec/roots.md";
+import * as page from "../../content/rite-tec/index.md";
 
 const w = world("rite-tec");
+const f = page.frontmatter;
 
-// One tab per part of the style, each on the black Rite ground in its own variant.
-const tabs = [
-  { id: "style", label: "Style", theme: "rite", title: "What Rite Tec is", doc: style },
-  { id: "body", label: "Body", theme: "rite-snake", title: "Mechanics and space", doc: body },
-  { id: "moves", label: "Moves", theme: "rite-club", title: "Footwork, projection and the rod", doc: moves },
-  { id: "practice", label: "Practice", theme: "rite-axis", title: "Training and attention", doc: practice },
-  { id: "roots", label: "Roots", theme: "rite-love", title: "Lineage and music", doc: roots },
-];
+// Tabs are the other files in content/rite-tec, ordered by their `order`.
+// Each sits on the black Rite ground in its own variant (a design choice, so it lives here).
+const THEMES: Record<string, string> = { style: "rite", body: "rite-snake", moves: "rite-club", practice: "rite-axis", roots: "rite-love" };
+const files = import.meta.glob<{ frontmatter: { label: string; title: string; order: number }; Content: any }>(
+  "../../content/rite-tec/*.md", { eager: true },
+);
+const tabs = Object.entries(files)
+  .filter(([path]) => !path.endsWith("/index.md"))
+  .map(([path, doc]) => {
+    const id = path.split("/").pop()!.replace(/\.md$/, "");
+    return { id, label: doc.frontmatter.label, title: doc.frontmatter.title, order: doc.frontmatter.order, theme: THEMES[id] ?? "rite", doc };
+  })
+  .sort((a, b) => a.order - b.order);
 const num = (i: number) => String(i + 1).padStart(2, "0");
 ---
-<Base
-  title="Rite Tec · Arafel"
-  description="Rite Tec: martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog."
-  theme={w.theme}
-  voice={w.voice}
-  world={w.id}
->
-  <div class="rt-top">
-  <Fog kind="contour" />
-  <header class="rt-head pad">
-    <p class="ei-kicker">A dark-electronic club dance style · a combination of techniques</p>
-    <h1 class="ei-title ei-title--hit v-title" data-text="Rite Tec">Rite Tec</h1>
-    <p class="rt-lede">Martial-art mechanics, street illusion and techno legwork, danced as a ritual in the fog.</p>
-  </header>
-  </div>
-  <div class="rt-edge"><Ornament kind="imperial" /></div>
+<Base title={f.title} description={f.description} theme={w.theme} voice={w.voice} world={w.id}>
+  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice="imperial" />
 
-  <div class="rt pad" data-tabs>
+  <div class="rt pg wrap pad grid2" data-tabs>
     <nav class="rt-rail" aria-label="Rite Tec">
       <div role="tablist" aria-orientation="vertical">
         {tabs.map((t, i) => (
@@ -49,12 +36,12 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
       </div>
     </nav>
 
-    <div class="rt-panels">
+    <div class="rt-panels main">
       {tabs.map((t, i) => (
         <section role="tabpanel" id={t.id} aria-labelledby={`tab-${t.id}`} data-theme={t.theme} class="rt-panel">
           <p class="ei-kicker">{num(i)} / {num(tabs.length - 1)}</p>
           <h2 class="v-sub">{t.title}</h2>
-          <div class="rt-doc"><t.doc.Content /></div>
+          <div class="doc rt-doc"><t.doc.Content /></div>
           <nav class="rt-step" aria-label="Next and previous">
             {i > 0 && <a href={`#${tabs[i - 1].id}`} data-step><small>Previous</small>{tabs[i - 1].label}</a>}
             {i < tabs.length - 1 && <a href={`#${tabs[i + 1].id}`} data-step class="next"><small>Next</small>{tabs[i + 1].label}</a>}
@@ -108,19 +95,7 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
 </script>
 
 <style>
-  /* The Imperial voice's contour fog behind the title, as on its swatch; lines stay 1px at any width. */
-  .rt-top { position: relative; isolation: isolate; }
-  .rt-top :global(.ei-dissolve path) { vector-effect: non-scaling-stroke; }
-  /* The frieze sits on the fog's bottom edge: its center line on the edge. */
-  .rt-edge :global(.frieze) { padding-top: 0; margin-top: -17px; position: relative; }
-
-  /* Compact title: the page is reference material, so the content starts high. */
-  .rt-head { padding-top: clamp(16px, 3vw, 32px); padding-bottom: 40px; max-width: 1760px; margin-inline: auto; box-sizing: border-box; }
-  .rt-head h1 { margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(48px, 5vw + 24px, 104px); line-height: .9; }
-  .rt-lede { margin: 16px 0 0; max-width: 52ch; font-size: clamp(18px, .5vw + 16px, 22px); line-height: 1.5; color: var(--ink); }
-
-  /* Desktop: a sticky rail of parts beside the reading column. */
-  .rt { box-sizing: border-box; display: grid; grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); gap: clamp(32px, 4vw, 72px); padding-top: 0; padding-bottom: 96px; max-width: 1760px; margin-inline: auto; }
+  /* Desktop: a sticky rail of parts in the left column, beside the reading column. */
   .rt-rail { position: sticky; top: 24px; align-self: start; }
   .rt-rail [role="tablist"] { display: flex; flex-direction: column; }
   .rt-rail a { display: flex; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink-muted); font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; background: none; }
@@ -130,31 +105,12 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
   .rt-num { font-family: 'Martian Mono', monospace; font-size: 11px; color: var(--trace); opacity: .7; }
   .rt-rail a[aria-selected="true"] .rt-num { color: var(--ember); opacity: 1; }
 
-  /* Panels: the Rite ground with the part's accents; generous reading size. */
-  .rt-panel { background: var(--abyss); color: var(--ink); font-size: clamp(17px, .5vw + 14px, 23px); line-height: 1.6; }
+  /* Panels: the Rite ground with the part's accents. */
+  .rt-panel { background: var(--abyss); color: var(--ink); }
   .rt-panel + .rt-panel { margin-top: 96px; }
   .is-tabbed .rt-panel + .rt-panel { margin-top: 0; }
   .rt-panel > h2 { margin: 16px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--bone); font-size: clamp(30px, 1.8vw + 22px, 52px); line-height: 1.05; }
   .rt-doc { margin-top: 32px; }
-  .rt-doc :global(p), .rt-doc :global(li) { max-width: 84ch; }
-  .rt-doc :global(p) { margin: 16px 0 0; }
-  .rt-doc :global(p:first-child) { margin-top: 0; }
-  .rt-doc :global(strong) { color: var(--bone); font-weight: 600; }
-  .rt-doc :global(a) { color: var(--signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  .rt-doc :global(h3) { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--trace); font-size: clamp(22px, .8vw + 18px, 30px); line-height: 1.15; }
-  .rt-doc :global(h4) { margin: 40px 0 0; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--trace); }
-  .rt-doc :global(ul) { margin: 16px 0 0; padding-left: 1.1em; }
-  .rt-doc :global(li + li) { margin-top: 8px; }
-  .rt-doc :global(li::marker) { color: var(--trace); }
-  .rt-doc :global(blockquote) { margin: 16px 0 0; padding-left: 24px; border-left: 1px solid var(--signal); }
-
-  /* Tables: hairlines only, the first column as the row's name. */
-  .rt-doc :global(table) { width: 100%; margin-top: 24px; border-collapse: collapse; font-size: .9em; line-height: 1.5; }
-  .rt-doc :global(th) { text-align: left; vertical-align: bottom; padding: 0 24px 12px 0; font: 500 12px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--line-strong); }
-  .rt-doc :global(td) { vertical-align: top; padding: 16px 24px 16px 0; border-bottom: 1px solid var(--line); }
-  .rt-doc :global(td:first-child) { font-family: var(--v-sub); color: var(--trace); min-width: 9em; }
-  .rt-doc :global(td:first-child strong) { color: var(--trace); font-weight: var(--v-sub-w); }
-  .rt-doc :global(thead:has(th:empty)) { display: none; }
 
   /* Previous and next part. */
   .rt-step { display: flex; justify-content: space-between; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -164,10 +120,9 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
   .rt-step a:hover { color: var(--trace); }
   .rt:not(.is-tabbed) .rt-step { display: none; }
 
-  /* Phone and narrow tablet: the rail becomes a sticky bar that scrolls sideways,
-     and every table row stacks into a labelled block. */
+  /* Phone and narrow tablet: the rail becomes a sticky bar with every tab on one row. */
   @media (max-width: 900px) {
-    .rt { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-top: 0; }
+    .rt { row-gap: 32px; }
     .rt-rail { position: sticky; top: 0; z-index: 3; margin-inline: calc(-1 * clamp(16px, 5vw, 64px)); padding-inline: clamp(16px, 5vw, 64px); background: var(--abyss); border-bottom: 1px solid var(--line); }
     .rt-rail [role="tablist"] { flex-direction: row; justify-content: space-between; gap: 8px; }
     .rt-rail a, .rt-rail a:last-child { border: 0; padding: 16px 0 14px; gap: 8px; }
@@ -176,13 +131,5 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
   @media (max-width: 560px) {
     .rt-num { display: none; }
     .rt-rail a { font-size: 12px; letter-spacing: .1em; }
-  }
-  @media (max-width: 720px) {
-    .rt-doc :global(table), .rt-doc :global(tbody), .rt-doc :global(tr), .rt-doc :global(td) { display: block; width: 100%; }
-    .rt-doc :global(thead) { display: none; }
-    .rt-doc :global(tr) { padding: 16px 0; border-top: 1px solid var(--line); }
-    .rt-doc :global(td) { padding: 4px 0; border: 0; min-width: 0; }
-    .rt-doc :global(td:first-child) { font-size: 1.15em; padding-bottom: 8px; }
-    .rt-doc :global(td[data-label]:not(:first-child))::before { content: attr(data-label); display: block; font: 500 11px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
   }
 </style>

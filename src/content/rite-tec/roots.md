@@ -1,3 +1,9 @@
+---
+label: Roots
+title: Lineage and music
+order: 5
+---
+
 ### Lineage
 
 Rite Tec draws on seven influences; each contributes one job, which is the justification for including it.

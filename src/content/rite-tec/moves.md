@@ -1,3 +1,9 @@
+---
+label: Moves
+title: Footwork, projection and the rod
+order: 3
+---
+
 The footwork has three families: fitness steps for rhythm, martial steps for travel and turning, club steps for syncopation. The fusion is the point: aerobic patterns danced with martial weight discipline. On top of it, force is projected into chosen directions, at three ranges, sometimes through a rod.
 
 ### Footwork

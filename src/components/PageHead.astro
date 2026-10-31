@@ -1,0 +1,26 @@
+---
+// The header every page shares: a fog band holding kicker, title (the hit) and lede on the
+// page grid, closed by the voice's own ornament centred on the band's bottom edge.
+import Fog from "./Fog.astro";
+import Ornament from "./Ornament.astro";
+
+interface Props {
+  kicker: string;
+  heading: string;
+  lede?: string;
+  voice: "imperial" | "prism";
+  fog?: "spread" | "storm" | "contour" | "rune";
+}
+const { kicker, heading, lede, voice, fog = "contour" } = Astro.props;
+---
+<div class="ph">
+  <Fog kind={fog} />
+  <header class="ph-head wrap pad grid2">
+    <div class="span">
+      <p class="ei-kicker">{kicker}</p>
+      <h1 class="ei-title ei-title--hit v-title" data-text={heading}>{heading}</h1>
+    </div>
+    {lede && <p class="ph-lede main">{lede}</p>}
+  </header>
+</div>
+<div class={`ph-edge ph-edge--${voice}`}><Ornament kind={voice} /></div>

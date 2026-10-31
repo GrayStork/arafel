@@ -1,3 +1,9 @@
+---
+label: Style
+title: What Rite Tec is
+order: 1
+---
+
 Rite Tec is a dark-electronic club dance style: a combination of techniques I have practiced for years. Most club dancing follows the beat. Here I try to answer it. The legs keep a steady stepping rhythm. The arms and head mark accents with popping, robot and mime. Taiji, I Liq Chuan and Wing Chun connect the two, so a movement starts at the floor and arrives at the hands through a spiral of bone and fascia. At the peaks, contemporary dance, jazz and Butoh add weight and contrast.
 
 It is made for dark electronic music, mostly between 120 and 140 BPM, and for dim, hazy rooms. It is still developing, and I keep testing it on the floor.

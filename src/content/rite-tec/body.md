@@ -1,3 +1,9 @@
+---
+label: Body
+title: Mechanics and space
+order: 2
+---
+
 The limbs never move on their own. Force starts at the floor, is routed by the center and arrives at the hands. Bones work as struts and fascia as cables, so tension carries across the whole body and a hit at the hand can be driven from the foot. Tendons and fascia store energy and release it like elastic bands, which is why I prefer springy, repeated movement over grinding effort.
 
 ### Main principles

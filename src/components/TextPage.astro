@@ -1,0 +1,23 @@
+---
+// A page made of one content file: its frontmatter fills the shared header,
+// its Markdown body sits in the reading column.
+import Base from "../layouts/Base.astro";
+import PageHead from "./PageHead.astro";
+import type { WorldId } from "../worlds";
+
+interface Props {
+  page: { frontmatter: Record<string, any>; Content: any };
+  theme: string;
+  voice: "imperial" | "prism";
+  world?: WorldId;
+  sections?: { label: string; href: string; current?: boolean }[];
+}
+const { page, theme, voice, world, sections } = Astro.props;
+const f = page.frontmatter;
+---
+<Base title={f.title} description={f.description} theme={theme} voice={voice} world={world} sections={sections}>
+  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice={voice} />
+  <main class="pg wrap pad grid2">
+    <div class="doc main"><page.Content /></div>
+  </main>
+</Base>

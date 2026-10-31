@@ -1,3 +1,9 @@
+---
+label: Practice
+title: Training and attention
+order: 4
+---
+
 I train Rite Tec through aerobic forms: patterns and moves rather than fixed choreography, worked for cardio, rhythm and breath. The mind stays active the whole time. It controls the body, reads the moment and listens to the body. When the music comes in, that control becomes expression.
 
 ### Training
