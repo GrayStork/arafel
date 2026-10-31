@@ -35,3 +35,7 @@ sites/
 # Text-editing guide and log stay local
 src/content/AGENTS.md
 src/content/NOTES.md
+
+# Local media, not part of the site
+*.wav
+video/
