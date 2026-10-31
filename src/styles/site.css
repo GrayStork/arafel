@@ -15,8 +15,10 @@
 /* Page header: fog band with kicker, title and lede; the voice's ornament sits on its bottom edge. */
 .ph { position: relative; isolation: isolate; }
 .ph .ei-dissolve path { vector-effect: non-scaling-stroke; }
-.ph-head { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(48px, 5vw, 72px); }
-.ph-head h1 { text-wrap: balance; margin: 16px 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(40px, 4vw + 24px, 104px); line-height: .95; }
+/* The same space from the band's top edge to the kicker as from the lede to its bottom edge. */
+.ph-head { --ph-pad: clamp(48px, 6vw, 96px); padding-block: var(--ph-pad); }
+/* The title and lede sit lower, well clear of the kicker; title to lede stays 24px. */
+.ph-head h1 { text-wrap: balance; margin: clamp(32px, 4vw, 56px) 0 0; font-family: var(--v-title); font-weight: var(--v-title-w); text-transform: var(--v-title-tt); color: var(--bone); font-size: clamp(40px, 4vw + 24px, 104px); line-height: .95; }
 .ph-lede { margin: 24px 0 0; max-width: 56ch; font-size: clamp(18px, .5vw + 16px, 23px); line-height: 1.5; color: var(--ink); }
 .ph-edge { position: relative; }
 div.ph-edge .frieze { padding-top: 0; margin-top: -17px; }

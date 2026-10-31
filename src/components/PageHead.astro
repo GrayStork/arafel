@@ -20,7 +20,7 @@ const { kicker, heading, lede, voice, fog = "contour" } = Astro.props;
       <p class="ei-kicker">{kicker}</p>
       <h1 class="ei-title ei-title--hit v-title" data-text={heading}>{heading}</h1>
     </div>
-    {lede && <p class="ph-lede main">{lede}</p>}
+    {lede && <p class="ph-lede span">{lede}</p>}
   </header>
 </div>
 <div class={`ph-edge ph-edge--${voice}`}><Ornament kind={voice} /></div>
