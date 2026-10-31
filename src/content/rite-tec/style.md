@@ -4,9 +4,16 @@ title: What Rite Tec is
 order: 1
 ---
 
-Rite Tec is a dark-electronic club dance style: a combination of techniques I have practiced for years. Most club dancing follows the beat. Here I try to answer it. The legs keep a steady stepping rhythm. The arms and head mark accents with popping, robot and mime. Taiji, I Liq Chuan and Wing Chun connect the two, so a movement starts at the floor and arrives at the hands through a spiral of bone and fascia. At the peaks, contemporary dance, jazz and Butoh add weight and contrast.
+Rite Tec is a dark-electronic club dance style: a combination of techniques I have practiced for years. Most club dancing follows the beat. Here I try to answer it. The legs keep a steady stepping rhythm. The arms and head mark accents with popping, robot and mime. Physical principles from Chinese internal wushu connect the two: rooting, the spiral, load and release, empty and full, and centerlines. A movement starts at the floor and arrives at the hands. At the peaks, contemporary dance, jazz and Butoh add weight and contrast.
 
 It is made for dark electronic music, mostly between 120 and 140 BPM, and for dim, hazy rooms. It is still developing, and I keep testing it on the floor.
+
+### Mind and body
+
+| | |
+| --- | --- |
+| **Mind** | Awareness, immersion and focus. |
+| **Body** | Fitness and endurance, flexibility, technique, control of mass and an understanding of body mechanics. |
 
 ### Four layers, one body
 

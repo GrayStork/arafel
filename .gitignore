@@ -36,6 +36,13 @@ sites/
 src/content/AGENTS.md
 src/content/NOTES.md
 
-# Local media, not part of the site
+# Local media, not part of the site (public/video is site media)
 *.wav
-video/
+*.mov
+/video/
+
+# Rod videos waiting for their week: remove a pair of lines, uncomment its block in
+# src/content/rite-tec/practice.md, then commit both to publish it.
+public/video/rod/rite-tec-rod-2-steps.*
+public/video/rod/rite-tec-rod-3-levels.*
+public/video/rod/rite-tec-rod-0-rod-work.*

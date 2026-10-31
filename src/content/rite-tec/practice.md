@@ -4,35 +4,70 @@ title: Training and attention
 order: 4
 ---
 
-I train Rite Tec through aerobic forms: patterns and moves rather than fixed choreography, worked for cardio, rhythm and breath. The mind stays active the whole time. It controls the body, reads the moment and listens to the body. When the music comes in, that control becomes expression.
+I train Rite Tec on two sides at once: the mind and the body. I keep a set of routines and concepts and train them constantly. Then I dance them to a track I did not pick, as improvisation, here and now. The videos below show that second part.
 
-### Training
-
-| Practice | What it builds |
-| --- | --- |
-| Aerobic forms | Cardio, rhythm and breath through patterns and moves. |
-| Hand barbells, 1 to 3 kg | The same patterns with load in the hands. |
-| Breath and energy work | Basic standing and breathing practice. |
-| Martial drills | Directions, alignment and the spiral. |
-| Flexibility to rhythm | Directional popping: hands or legs hit on the beat. |
-
-### Coordination
-
-| Drill | What it trains |
-| --- | --- |
-| Independent limbs | Each leg and each hand moving separately, placed on purpose. |
-| Floor work | Coordination in positions on the floor. |
-| Standing work | The same coordination standing. |
-| Directional moves | Body parts coordinated through directions in space. |
-
-### Here and now
-
-The dance floor is a mindfulness practice. Techno gives a slowly changing, repetitive field. Martial training gives the attention to meet each change as it happens.
+### Mind
 
 | | |
 | --- | --- |
-| **Presence** | Hypnotic techno works through repetition, space and gradual change more than tempo. I cannot plan against it, only notice the next change. |
-| **Attention** | Non-assertion, non-resistance, the present moment. The partner is the track. Listen, match, respond, never force. |
-| **Direction** | Every movement resolves onto a known axis: six directions, centerline, diagonals. It arrives on purpose. |
-| **Mass** | I always know where the weight is: empty and full in the legs, the rod as a third point, the root before a release. Controlled mass lets precision survive inside trance. |
+| **Awareness** | Non-assertion, non-resistance, the present moment. The partner is the track. Listen, match, respond, never force. |
+| **Immersion** | Hypnotic techno works through repetition, space and gradual change more than tempo. I cannot plan against it, only notice the next change. |
+| **Focus** | Every movement resolves onto a known axis and arrives on purpose. I always know where the weight is, so precision survives inside trance. |
+
+### Body
+
+| Quality | How I train it |
+| --- | --- |
+| Fitness and endurance | Aerobic forms: patterns and moves for cardio, rhythm and breath. |
+| Flexibility | Flexibility to rhythm: directional popping, hands or legs hitting on the beat. |
+| Technique | Footwork, projection and hand work, drilled as fixed routines. |
+| Control of mass | Hand barbells of 1 to 3 kg and a rod of 3 to 5 kg. Empty and full in the legs, the rod as a third point. |
+| Body mechanics | Directions, alignment and the spiral. Each leg and hand moving on its own, placed on purpose, standing and on the floor. |
+
+### Routine and improvisation
+
+| | |
+| --- | --- |
+| **Routine** | Patterns and concepts trained the same way, again and again. |
+| **Improvisation** | The same material danced to a random track. Nothing is planned. |
 | **The rite** | Repetition, attention and control turn a club set into a ritual. Lost in the music and fully in charge of the body at once. That paradox is one more form of dissonance. |
+
+### The rod
+
+A rod of 3 to 5 kg is held as a third point beside the two feet. It gives the structure something to organize around.
+
+| Layer | With the rod |
+| --- | --- |
+| Engine | Aerobic patterns and steps performed holding the rod. |
+| Transmission | Alignment, frame and the spiral become visible and felt. |
+| Signal | The rod becomes a staff. Any vertical or horizontal element in the space can play the same role for lines, planes, hits and stops. |
+
+#### Rod 1
+
+<figure class="rt-video">
+<video src="/video/rod/rite-tec-rod-1-the-axis.mp4" poster="/video/rod/rite-tec-rod-1-the-axis.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 1 · The Axis</figcaption>
+</figure>
+
+<!-- Week 2: uncomment to publish
+<figure class="rt-video">
+<video src="/video/rod/rite-tec-rod-2-steps.mp4" poster="/video/rod/rite-tec-rod-2-steps.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 2 · Steps</figcaption>
+</figure>
+-->
+
+<!-- Week 3: uncomment to publish
+<figure class="rt-video">
+<video src="/video/rod/rite-tec-rod-3-levels.mp4" poster="/video/rod/rite-tec-rod-3-levels.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 3 · Levels</figcaption>
+</figure>
+-->
+
+<!-- Week 4: uncomment to publish
+<figure class="rt-video">
+<video src="/video/rod/rite-tec-rod-0-rod-work.mp4" poster="/video/rod/rite-tec-rod-0-rod-work.jpg" controls playsinline preload="none"></video>
+<figcaption>Full session · Rod work</figcaption>
+</figure>
+-->
+
+Music: art.ic, Synthethic Movements (ABSENCE). More rod work follows.
