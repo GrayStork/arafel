@@ -13,7 +13,7 @@ day:
 night:
   kicker: By night
   title: Eidolon
-  sub: Dance, ritual, sound
+  sub: Dance, ritual, fog
   text: The phantom double, the figure that steps into the fog when the drawing board closes. The art project and the self it is made for.
   action: { label: The night half, href: /eidolon/ }
 ---

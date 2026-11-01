@@ -8,6 +8,8 @@ Rite Tec is a dark-electronic club dance style: a combination of techniques I ha
 
 It is made for dark electronic music, mostly between 120 and 140 BPM, and for dim, hazy rooms. It is still developing, and I keep testing it on the floor.
 
+<p class="pg-cta__row pg-cta__row--small"><span>See how Rite Tec practice looks like</span><a class="ei-btn ei-btn--square" href="#the-rod"><span class="ei-btn__label" data-text="Practice videos">Practice videos</span></a></p>
+
 ### Mind and body
 
 | | |

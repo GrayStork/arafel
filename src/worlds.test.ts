@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { WORLDS, world, worldHref } from "./worlds";
+import { WORLDS, world, worldHref, worldPath } from "./worlds";
 
 describe("worlds", () => {
   it("links to a world's home", () => {
@@ -8,6 +8,10 @@ describe("worlds", () => {
 
   it("joins a page without doubling the slash", () => {
     expect(worldHref("architect", "/blog/")).toBe("/architect/blog/");
+  });
+
+  it("shows a world as a path on the domain", () => {
+    expect(worldPath("eidolon")).toBe("/eidolon");
   });
 
   it("keeps Rite palettes inside Rite Tec", () => {

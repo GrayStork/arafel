@@ -188,6 +188,19 @@ img{max-width:100%}
 .ei-btn--prism[aria-pressed="true"], .ei-btn--prism.is-pressed { font-variation-settings: 'XROT' 30, 'YROT' -35; color: var(--signal); text-shadow: 4px 3px 0 var(--ember); }
 .ei-btn--prism:disabled { font-variation-settings: 'XROT' 0, 'YROT' 0; text-shadow: none; }
 
+/* Square: an outline in the voice's nav face. Hover is the title's hit: same slices, colors and timing. The frame holds still. */
+.ei-btn--square { box-sizing: border-box; padding: 12px 32px; border: 1px solid var(--signal); color: var(--signal); font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; transition: none; }
+.ei-btn--square:hover, .ei-btn--square.is-hover { color: var(--bone); border-color: var(--trace); }
+.ei-btn--square .ei-btn__label::before { color: var(--signal); clip-path: inset(14% 0 62% 0); }
+.ei-btn--square .ei-btn__label::after { color: var(--led); clip-path: inset(58% 0 22% 0); }
+.ei-btn--square:hover .ei-btn__label::before, .ei-btn--square.is-hover .ei-btn__label::before,
+.ei-btn--square:hover .ei-btn__label::after, .ei-btn--square.is-hover .ei-btn__label::after { animation: ei-hit calc(var(--beat-128) * 4) steps(1, end) infinite; }
+.ei-btn--square:hover .ei-btn__label::after, .ei-btn--square.is-hover .ei-btn__label::after { animation-delay: var(--snap); }
+.ei-btn--square[aria-pressed="true"], .ei-btn--square.is-pressed { color: var(--ember); border-color: var(--ember); }
+.ei-btn--square:disabled { color: var(--line-strong); border-color: var(--line); }
+.ei-btn--square:disabled .ei-btn__label::before, .ei-btn--square:disabled .ei-btn__label::after { animation: none; opacity: 0; }
+[data-voice="signal"] .ei-btn--square { font-size: 17px; font-weight: 800; font-variation-settings: 'wght' 800, 'ROND' 0; }
+
 /* ---------- Lineup: the network as a running order, three typographic settings ---------- */
 .ei-lineup { list-style: none; margin: 0; padding: 0; }
 .ei-lineup__item { position: relative; display: grid; text-decoration: none; color: var(--ink); }
@@ -537,6 +550,7 @@ img{max-width:100%}
   .ei-seam img:first-child { clip-path: inset(0 0 50% 0); } .ei-seam img:last-child { clip-path: inset(50% 0 0 0); }
 }
 @container (max-width: 720px) { .ei-split .day { padding-bottom: clamp(32px, 6vw, 72px); } .ei-split .night { padding-top: clamp(32px, 6vw, 72px); } }
+
 
 
 

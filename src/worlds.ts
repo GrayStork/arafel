@@ -7,7 +7,7 @@ export type WorldId = "architect" | "eidolon" | "rite-tec";
 export interface World {
   id: WorldId;
   label: string; // the worlds switch: Day, Night, Rite
-  name: string; // brand text before the domain
+  name: string; // the world's name in links
   theme: string; // data-theme on <html>
   dot: string; // data-theme of the switch dot
   voice: string; // data-voice on <html>
@@ -32,4 +32,9 @@ export function world(id: WorldId): World {
 /** Link to a page inside a world, e.g. worldHref("architect", "blog/"). */
 export function worldHref(id: WorldId, page = ""): string {
   return world(id).base + page.replace(/^\//, "");
+}
+
+/** The path shown after the domain, e.g. "/eidolon". */
+export function worldPath(id: WorldId): string {
+  return world(id).base.replace(/\/$/, "");
 }

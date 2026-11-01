@@ -1,5 +1,5 @@
 ---
-import { DOMAIN, WORLDS, world as getWorld, type WorldId } from "../worlds";
+import { DOMAIN, WORLDS, world as getWorld, worldPath, type WorldId } from "../worlds";
 
 interface Props {
   world?: WorldId;
@@ -12,7 +12,7 @@ const w = current ? getWorld(current) : undefined;
 <header class="ei-net">
   <a class="ei-net__brand" href={w ? w.base : "/"}>
     <img src={`/kit/img/faces/${w ? w.face : "eidolon-axis.webp"}`} alt="" />
-    <span class="ei-net__domain">{w ? <>{w.name}<b>.{DOMAIN}</b></> : <>{DOMAIN.split(".")[0]}<b>.{DOMAIN.split(".")[1]}</b></>}</span>
+    <span class="ei-net__domain">{w ? <>{DOMAIN}<b>{worldPath(w.id)}</b></> : <>{DOMAIN.split(".")[0]}<b>.{DOMAIN.split(".")[1]}</b></>}</span>
   </a>
   <nav class="ei-net__sections" aria-label="Sections">
     {sections.map((s) => <a href={s.href} aria-current={s.current ? "page" : undefined}>{s.label}</a>)}

@@ -1,6 +1,7 @@
 ---
 // Prism for the canon voices, pixel (Sixtyfour) for Relay and Inscription.
-interface Props { label: string; href?: string; kind?: "prism" | "pixel"; pressed?: boolean }
+// Square is the framed option in any voice, in its nav face.
+interface Props { label: string; href?: string; kind?: "prism" | "pixel" | "square"; pressed?: boolean }
 const { label, href, kind = "prism", pressed = false } = Astro.props;
 const cls = `ei-btn ei-btn--${kind}${pressed ? " is-pressed" : ""}`;
 ---

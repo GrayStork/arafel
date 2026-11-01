@@ -51,7 +51,7 @@ A rod of 3 to 5 kg is held as a third point beside the two feet. It gives the st
 
 <p class="rt-shorts"><span>Shorts</span><a href="https://youtube.com/shorts/uxuN8er56OU" target="_blank" rel="noopener">Part 1 · The Axis</a><span class="soon">Part 2 · Steps</span><span class="soon">Part 3 · Levels</span></p>
 
-Music: art.ic, Synthethic Movements (ABSENCE). More rod work follows.
+Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements). More rod work follows.
 
 ### Empty hand
 
@@ -62,4 +62,4 @@ Legs, hands and drama, without the rod.
 <figcaption>Part 1 · Fusion</figcaption>
 </figure>
 
-Music: art.ic, Synthethic Movements (ABSENCE).
+Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements).

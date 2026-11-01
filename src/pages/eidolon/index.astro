@@ -1,7 +1,12 @@
 ---
+import Button from "../../components/Button.astro";
 import TextPage from "../../components/TextPage.astro";
 import * as page from "../../content/pages/eidolon.md";
 import { world } from "../../worlds";
 const w = world("eidolon");
 ---
-<TextPage page={page} theme={w.theme} voice="imperial" world={w.id} sections={[{ label: "About", href: "/about/" }]} spirits="4,2,1,3" />
+<TextPage page={page} theme={w.theme} voice="imperial" world={w.id} sections={[{ label: "About", href: "/about/" }]} spirits="4,2,1,3" center>
+  <aside slot="feature" class="pg-cta wrap pad">
+    <p class="pg-cta__row"><span>{page.frontmatter.cta}</span><Button kind="square" label={page.frontmatter.cta_label} href="/rite-tec/" /></p>
+  </aside>
+</TextPage>

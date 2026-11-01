@@ -1,5 +1,5 @@
 ---
-// Gallery of the shell components in each world's palette and voice. Not linked, noindex.
+// Gallery of the shell components in each world's palette and voice. Dev server only, see astro.config.mjs.
 import Base from "../layouts/Base.astro";
 import Hero from "../components/Hero.astro";
 import Sec from "../components/Sec.astro";
@@ -22,11 +22,30 @@ const lineup = [
   { time: "21:00", name: "Eidolon", sub: "Dance · performance" },
   { time: "22:00", name: "Rite Tec", sub: "Style · combined techniques" },
 ];
+
+// Square button: every voice in the three world palettes.
+const voices = [["imperial", "Tektur"], ["prism", "Tektur"], ["signal", "Doto"], ["relay", "Unbounded"], ["inscription", "Tektur"]];
+const palettes = [["club", "Night"], ["axis-arch", "Day"], ["rite", "Rite"]];
 ---
 <Base title="Components · Arafel" theme="club" voice="imperial" noindex>
   <Hero kicker="Shell · night · Cobalt Haze × Imperial" title="Shell" lede="Every block a page is built from, in the three worlds." fog="contour">
     <Actions><Button label="Enter" href="#day" /><Button label="Booked" pressed /></Actions>
   </Hero>
+
+  <section id="square" class="sq">
+    <div class="pad"><p class="ei-kicker">Canon</p><h2 class="v-sub">Square button</h2><p>Rest, the hit, pressed, disabled. Hover any button for the live hit.</p></div>
+    {palettes.map(([theme, pal]) => voices.map(([voice, face]) => (
+      <div class="sq__row pad" data-theme={theme} data-voice={voice}>
+        <p class="sq__name">{pal} · {voice} · {face}</p>
+        <div class="sq__set">
+          <a class="ei-btn ei-btn--square" href="#square"><span class="ei-btn__label" data-text="Rite Tec">Rite Tec</span></a>
+          <a class="ei-btn ei-btn--square is-hover" href="#square"><span class="ei-btn__label" data-text="Rite Tec">Rite Tec</span></a>
+          <button class="ei-btn ei-btn--square is-pressed"><span class="ei-btn__label" data-text="Booked">Booked</span></button>
+          <button class="ei-btn ei-btn--square" disabled><span class="ei-btn__label" data-text="Sold out">Sold out</span></button>
+        </div>
+      </div>
+    )))}
+  </section>
 
   <Sec kicker="Imperial" title="Litany, meta, lineup">
     <Litany kind="turn" lines={["Force", "starts at", "the Floor", "is routed", "by the center"]} turn={2} />
@@ -50,7 +69,7 @@ const lineup = [
 
   <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }}>
     <SplitHalf slot="day" kicker="Split · by day" title="Architect" sub="Systems, platforms, engines" text="The day half, in Prism." action={{ label: "Day", href: "/architect/" }} />
-    <SplitHalf slot="night" kicker="Split · by night" title="Eidolon" sub="Dance, ritual, sound" text="The night half, in Imperial." action={{ label: "Night", href: "/eidolon/" }} />
+    <SplitHalf slot="night" kicker="Split · by night" title="Eidolon" sub="Dance, ritual, fog" text="The night half, in Imperial." action={{ label: "Night", href: "/eidolon/" }} />
   </Split>
 
   <Mood theme="rite-axis" voice="relay" band>
@@ -83,3 +102,10 @@ const lineup = [
     </section>
   </Mood>
 </Base>
+
+<style>
+  .sq { padding-block: 64px; }
+  .sq__row { padding-block: 24px; background: var(--abyss); color: var(--ink); border-top: 1px solid var(--line); }
+  .sq__name { margin: 0 0 16px; font: 500 12px/16px 'Martian Mono', monospace; color: var(--ink-muted); }
+  .sq__set { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; }
+</style>

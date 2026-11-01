@@ -60,8 +60,10 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
     const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
     root.classList.add("is-tabbed");
 
+    // A hash can name a tab or any heading inside a tab (e.g. #the-rod); a heading opens its tab.
+    const panelOf = (id: string) => (id ? document.getElementById(id)?.closest<HTMLElement>('[role="tabpanel"]')?.id : undefined);
     const select = (id: string, focus = false, scroll = false) => {
-      const tab = tabs.find((t) => t.getAttribute("aria-controls") === id) ?? tabs[0];
+      const tab = tabs.find((t) => t.getAttribute("aria-controls") === (panelOf(id) ?? id)) ?? tabs[0];
       tabs.forEach((t) => {
         const on = t === tab;
         t.setAttribute("aria-selected", String(on));
@@ -70,6 +72,8 @@ const num = (i: number) => String(i + 1).padStart(2, "0");
       panels.forEach((p) => (p.hidden = p.id !== tab.getAttribute("aria-controls")));
       if (focus) tab.focus();
       if (scroll && root.getBoundingClientRect().top < 0) root.scrollIntoView({ block: "start" });
+      const target = id && document.getElementById(id);
+      if (target && target.getAttribute("role") !== "tabpanel") requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
       return tab.getAttribute("aria-controls")!;
     };
 

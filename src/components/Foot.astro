@@ -1,9 +1,9 @@
 ---
-import { DOMAIN, WORLDS, world as getWorld, type WorldId } from "../worlds";
+import { DOMAIN, WORLDS, worldPath, type WorldId } from "../worlds";
 
 interface Props { world?: WorldId }
 const { world: current } = Astro.props;
-const here = current ? `${getWorld(current).name}.${DOMAIN}` : DOMAIN;
+const here = current ? `${DOMAIN}${worldPath(current)}` : DOMAIN;
 ---
 <footer class="ei-foot pad">
   <span>{here}</span>

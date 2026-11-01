@@ -11,6 +11,6 @@ This is the home of my two halves. By day I design the systems underneath: platf
 | | |
 | --- | --- |
 | **[Architect](/architect/)** | The day half. Platforms, infrastructure, agentic systems. In work. |
-| **[Eidolon](/eidolon/)** | The night half. Dance, ritual and sound. In work. |
+| **[Eidolon](/eidolon/)** | The night half. Dance, ritual and fog. In work. |
 | **[Rite Tec](/rite-tec/)** | A dark-electronic club dance style, a combination of techniques. |
 | **[About](/about/)** | Both halves side by side. |
