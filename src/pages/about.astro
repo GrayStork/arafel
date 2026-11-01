@@ -8,7 +8,7 @@ import * as page from "../content/pages/about.md";
 
 const f = page.frontmatter;
 ---
-<Base title={f.title} description={f.description} theme="axis" voice="prism" sections={[{ label: "About", href: "/about/", current: true }]}>
+<Base title={f.title} description={f.description} theme="axis" voice="prism" og="about" sections={[{ label: "About", href: "/about/", current: true }]}>
   <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice="prism" />
   <Split day={{ theme: "axis-arch", voice: "prism", fog: "spread" }} night={{ theme: "club", voice: "imperial", fog: "storm" }}>
     <SplitHalf slot="day" {...f.day} />
