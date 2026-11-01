@@ -3,6 +3,7 @@
 // page grid, closed by the voice's own ornament centred on the band's bottom edge.
 import Fog from "./Fog.astro";
 import Ornament from "./Ornament.astro";
+import Spirit from "./Spirit.astro";
 
 interface Props {
   kicker: string;
@@ -10,8 +11,9 @@ interface Props {
   lede?: string;
   voice: "imperial" | "prism";
   fog?: "spread" | "storm" | "contour" | "rune";
+  spirits?: string; // pose pool for a spirit on the right of the band (wide screens only)
 }
-const { kicker, heading, lede, voice, fog = "contour" } = Astro.props;
+const { kicker, heading, lede, voice, fog = "contour", spirits } = Astro.props;
 ---
 <div class="ph">
   <Fog kind={fog} />
@@ -22,5 +24,6 @@ const { kicker, heading, lede, voice, fog = "contour" } = Astro.props;
     </div>
     {lede && <p class="ph-lede span">{lede}</p>}
   </header>
+  {spirits && <Spirit pool={spirits} class="ph-spirit" />}
 </div>
 <div class={`ph-edge ph-edge--${voice}`}><Ornament kind={voice} /></div>

@@ -1,0 +1,11 @@
+---
+// One spirit slot: a rock-art dancer that glitches and swaps poses on its own rhythm.
+// pool: indexes into POSES in src/spirits.ts (0 third point, 1 axis, 2 kneel, 3 staff, 4 wings, 5 lunge).
+interface Props { pool?: string; seed?: number; class?: string }
+const { pool = "1,3,2,5,0,4", seed = 41, class: cls = "" } = Astro.props;
+---
+<svg class={`ei-spirit ${cls}`} data-pool={pool} data-seed={seed} viewBox="0 0 200 260" aria-hidden="true"></svg>
+<script>
+  import { mountSpirits } from "../spirits";
+  mountSpirits();
+</script>

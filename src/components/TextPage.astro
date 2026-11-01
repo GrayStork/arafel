@@ -11,12 +11,13 @@ interface Props {
   voice: "imperial" | "prism";
   world?: WorldId;
   sections?: { label: string; href: string; current?: boolean }[];
+  spirits?: string;
 }
-const { page, theme, voice, world, sections } = Astro.props;
+const { page, theme, voice, world, sections, spirits } = Astro.props;
 const f = page.frontmatter;
 ---
 <Base title={f.title} description={f.description} theme={theme} voice={voice} world={world} sections={sections}>
-  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice={voice} />
+  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice={voice} spirits={spirits} />
   <main class="pg wrap pad grid2">
     <div class="doc main"><page.Content /></div>
   </main>

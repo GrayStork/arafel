@@ -24,6 +24,24 @@
 div.ph-edge .frieze { padding-top: 0; margin-top: -17px; }
 div.ph-edge .ei-prismsep { height: 48px; margin: -24px 0 0; }
 .ph-edge--prism { padding-bottom: clamp(40px, 5vw, 64px); }
+/* A spirit on the right of the header band, on wide screens only; it swaps poses in place. */
+.ph-spirit { position: absolute; z-index: 1; right: clamp(64px, 12vw, 260px); top: 50%; transform: translateY(-50%); height: 72%; max-height: 420px; width: auto; aspect-ratio: 200 / 260; display: block; pointer-events: none; }
+@media (max-width: 1099px) { .ph-spirit { display: none; } }
+.ei-spirit .l1 { stroke: var(--trace); stroke-width: 15; }
+.ei-spirit .l2, .ei-spirit .l4 { stroke: var(--abyss); }
+.ei-spirit .l2 { stroke-width: 10.5; }
+.ei-spirit .l3 { stroke: var(--bone); stroke-width: 6.5; }
+.ei-spirit .l4 { stroke-width: 2.2; }
+.ei-spirit .l1, .ei-spirit .l2, .ei-spirit .l3, .ei-spirit .l4 { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.ei-spirit .sp-orn { fill: none; stroke: var(--trace); stroke-width: 1.6; stroke-linecap: round; opacity: .8; }
+.ei-spirit .sp-dot { fill: var(--ember); }
+.ei-spirit .sp-ghost { opacity: 0; }
+.ei-spirit .sp-s .l1, .ei-spirit .sp-s .l3 { stroke: var(--signal); }
+.ei-spirit .sp-e .l1, .ei-spirit .sp-e .l3 { stroke: var(--led); }
+.ei-spirit .sp { transition: opacity .09s steps(2); }
+.ei-spirit .sp.is-gone { opacity: 0; }
+.ei-spirit .sp.is-dim { opacity: .35; }
+
 
 /* Reading text, set by the voice; tables use hairlines only and stack on a phone. */
 .doc { color: var(--ink); font-size: clamp(17px, .5vw + 14px, 23px); line-height: 1.6; }
