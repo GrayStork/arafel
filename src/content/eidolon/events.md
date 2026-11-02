@@ -1,5 +1,5 @@
 ---
-label: Events
+label: Colabs
 title: Events and collaborations
 order: 3
 ---
