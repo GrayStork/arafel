@@ -37,7 +37,7 @@ It is made for dark electronic music, mostly between 120 and 140 BPM, and for di
 
 ### Who it fits
 
-Rite Tec is hard to pick up from the outside. Its physical principles come from Chinese internal wushu, and I am no master of it, though I have practiced internal martial arts for more than 10 years in total. For the base principles, I suggest a dedicated trainer in person: a certified sifu who practices. A video cannot pass them on. Still, anyone who shares a practice with Rite Tec can take something from it. Start from the part that meets your own practice, usually the steps, add one principle at a time and leave the rest.
+Rite Tec is rich in its influences (see [Roots](#roots)). Some concepts may be hard to pick up, like the physical principles from Chinese internal wushu. I am no master of it, though I have practiced internal martial arts for more than 10 years in total. For the base principles, I suggest a dedicated trainer in person: a certified sifu who practices. A video cannot pass them on. Still, anyone who shares a practice with Rite Tec can take something from it. Start from the part that meets your own practice, usually the steps, add one principle at a time and leave the rest.
 
 | If you practice | What Rite Tec can add |
 | --- | --- |
