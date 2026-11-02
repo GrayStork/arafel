@@ -49,7 +49,7 @@ A rod of 3 to 5 kg is held as a third point beside the two feet. It gives the st
 <figcaption>Full session · Rod work</figcaption>
 </figure>
 
-<p class="rt-shorts"><span>Shorts</span><a href="https://youtube.com/shorts/uxuN8er56OU" target="_blank" rel="noopener">Part 1 · The Axis</a><span class="soon">Part 2 · Steps</span><span class="soon">Part 3 · Levels</span></p>
+<p class="rt-shorts"><span>Shorts</span><a href="https://youtube.com/shorts/uxuN8er56OU" target="_blank" rel="noopener">Part 1 · The Axis</a><a href="https://youtube.com/shorts/HvbGrKF0Z84" target="_blank" rel="noopener">Part 2 · Steps</a><span class="soon">Part 3 · Levels</span></p>
 
 Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements). More rod work follows.
 
