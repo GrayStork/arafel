@@ -1,0 +1,122 @@
+---
+// Tabs that keep their place in the URL: a sticky rail of parts beside the reading column,
+// a one-row bar on a phone. Each tab renders its Markdown, then a named slot with its id, if any.
+// Without JavaScript every part shows in order.
+export interface Tab { id: string; label: string; title?: string; theme?: string; Content?: any }
+interface Props { tabs: Tab[]; label: string }
+const { tabs, label } = Astro.props;
+const num = (i: number) => String(i + 1).padStart(2, "0");
+const extra: Record<string, string> = {};
+for (const t of tabs) if (Astro.slots.has(t.id)) extra[t.id] = await Astro.slots.render(t.id);
+---
+  <div class="rt pg wrap pad grid2" data-tabs>
+    <nav class="rt-rail" aria-label={label}>
+      <div role="tablist" aria-orientation="vertical">
+        {tabs.map((t, i) => (
+          <a role="tab" id={`tab-${t.id}`} href={`#${t.id}`} aria-controls={t.id} aria-selected={i === 0 ? "true" : "false"} data-theme={t.theme}>
+            <span class="rt-num">{num(i)}</span><span class="rt-label">{t.label}</span>
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <div class="rt-panels main">
+      {tabs.map((t, i) => (
+        <section role="tabpanel" id={t.id} aria-labelledby={`tab-${t.id}`} data-theme={t.theme} class="rt-panel">
+          <p class="ei-kicker">{num(i)} / {num(tabs.length - 1)}</p>
+          {t.title && <h2 class="v-sub">{t.title}</h2>}
+          <div class="doc rt-doc">{t.Content && <t.Content />}{extra[t.id] && <Fragment set:html={extra[t.id]} />}</div>
+          <nav class="rt-step" aria-label="Next and previous">
+            {i > 0 && <a href={`#${tabs[i - 1].id}`} data-step><small>Previous</small>{tabs[i - 1].label}</a>}
+            {i < tabs.length - 1 && <a href={`#${tabs[i + 1].id}`} data-step class="next"><small>Next</small>{tabs[i + 1].label}</a>}
+          </nav>
+        </section>
+      ))}
+    </div>
+  </div>
+
+<script>
+  // Tabs that keep their place in the URL. Without JavaScript every part shows in order.
+  const root = document.querySelector<HTMLElement>("[data-tabs]");
+  if (root) {
+    const tabs = [...root.querySelectorAll<HTMLAnchorElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+    root.classList.add("is-tabbed");
+
+    // A hash can name a tab or any heading inside a tab (e.g. #the-rod); a heading opens its tab.
+    const panelOf = (id: string) => (id ? document.getElementById(id)?.closest<HTMLElement>('[role="tabpanel"]')?.id : undefined);
+    const select = (id: string, focus = false, scroll = false) => {
+      const tab = tabs.find((t) => t.getAttribute("aria-controls") === (panelOf(id) ?? id)) ?? tabs[0];
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach((p) => (p.hidden = p.id !== tab.getAttribute("aria-controls")));
+      if (focus) tab.focus();
+      if (scroll && root.getBoundingClientRect().top < 0) root.scrollIntoView({ block: "start" });
+      const target = id && document.getElementById(id);
+      if (target && target.getAttribute("role") !== "tabpanel") requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+      return tab.getAttribute("aria-controls")!;
+    };
+
+    const go = (id: string, focus = false, scroll = false) => {
+      history.replaceState(null, "", `#${select(id, focus, scroll)}`);
+    };
+
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", (e) => { e.preventDefault(); go(t.getAttribute("aria-controls")!); });
+      t.addEventListener("keydown", (e) => {
+        const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (step === undefined) return;
+        e.preventDefault();
+        go(tabs[(i + step + tabs.length) % tabs.length].getAttribute("aria-controls")!, true);
+      });
+    });
+    root.querySelectorAll<HTMLAnchorElement>("[data-step]").forEach((a) =>
+      a.addEventListener("click", (e) => { e.preventDefault(); go(a.hash.slice(1), false, true); }),
+    );
+    window.addEventListener("hashchange", () => select(location.hash.slice(1)));
+    select(location.hash.slice(1));
+  }
+</script>
+
+<style>
+  /* Desktop: a sticky rail of parts in the left column, beside the reading column. */
+  .rt-rail { position: sticky; top: 24px; align-self: start; }
+  .rt-rail [role="tablist"] { display: flex; flex-direction: column; }
+  .rt-rail a { display: flex; gap: 16px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink-muted); font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; background: none; }
+  .rt-rail a:last-child { border-bottom: 1px solid var(--line); }
+  .rt-rail a:hover { color: var(--trace); }
+  .rt-rail a[aria-selected="true"] { color: var(--signal); }
+  .rt-num { font-family: 'Martian Mono', monospace; font-size: 11px; color: var(--trace); opacity: .7; }
+  .rt-rail a[aria-selected="true"] .rt-num { color: var(--ember); opacity: 1; }
+
+  /* Panels: the Rite ground with the part's accents. */
+  .rt-panel { background: var(--abyss); color: var(--ink); }
+  .rt-panel + .rt-panel { margin-top: 96px; }
+  .is-tabbed .rt-panel + .rt-panel { margin-top: 0; }
+  .rt-panel > h2 { margin: 16px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--bone); font-size: clamp(30px, 1.8vw + 22px, 52px); line-height: 1.05; }
+  .rt-doc { margin-top: 32px; }
+
+  /* Previous and next part. */
+  .rt-step { display: flex; justify-content: space-between; gap: 24px; margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .rt-step a { display: flex; flex-direction: column; gap: 4px; color: var(--signal); text-decoration: none; font-family: var(--v-sub); font-size: clamp(20px, .6vw + 17px, 26px); }
+  .rt-step a.next { margin-left: auto; text-align: right; }
+  .rt-step small { font: 500 11px/16px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
+  .rt-step a:hover { color: var(--trace); }
+  .rt:not(.is-tabbed) .rt-step { display: none; }
+
+  /* Phone and narrow tablet: the rail becomes a sticky bar with every tab on one row. */
+  @media (max-width: 900px) {
+    .rt { row-gap: 32px; }
+    .rt-rail { position: sticky; top: 0; z-index: 3; margin-inline: calc(-1 * clamp(16px, 5vw, 64px)); padding-inline: clamp(16px, 5vw, 64px); background: var(--abyss); border-bottom: 1px solid var(--line); }
+    .rt-rail [role="tablist"] { flex-direction: row; justify-content: space-between; gap: 8px; }
+    .rt-rail a, .rt-rail a:last-child { border: 0; padding: 16px 0 14px; gap: 8px; }
+    .rt-rail a[aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--signal); }
+  }
+  @media (max-width: 560px) {
+    .rt-num { display: none; }
+    .rt-rail a { font-size: 12px; letter-spacing: .1em; }
+  }
+</style>

@@ -34,3 +34,16 @@ It is made for dark electronic music, mostly between 120 and 140 BPM, and for di
 | **Tec** | Technique, techno and tectonic. Plates moving under pressure. |
 | **Dissonance** | Holding contradictions at once: machine and body, precision and collapse, a calm face on a violent body, ultra-slow movement over a fast track. Used at chosen moments, it keeps the audience from settling. |
 | **Invocation** | The movement reads as ritual: conjuring, invoking or directing forces, a power surge, a prayer. With the fog and the dark mood, it turns the club into a ceremony rather than a dance floor. |
+
+### Who it fits
+
+Rite Tec is hard to pick up from the outside. The physical principles from Chinese internal wushu take serious investment and training with a teacher in person, and a video cannot pass them on. Still, anyone who shares a practice with Rite Tec can take something from it. Start from the part that meets your own practice, usually the steps, add one principle at a time and leave the rest.
+
+| If you practice | What Rite Tec can add |
+| --- | --- |
+| Internal work | Cardio. The same principles carried at tempo, with endurance and breath under load. |
+| Aerobics and fitness | Immersion. More than a workout: attention, ritual and trance on top of the steps. |
+| Popping, robot and mime | A source of power. The hit as the end of a whole-body spiral, not only an isolation. |
+| Club and techno dancing | Structure. Stepping that holds for a whole set, with accents that answer the music. |
+| Contemporary dance, Butoh, theatre | A floor. Dramatic peaks set inside a steady pulse. |
+| Weights and staff work | Rhythm. Mass moved on the beat, the rod as a third point. |

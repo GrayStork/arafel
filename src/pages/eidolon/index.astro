@@ -1,12 +1,26 @@
 ---
-import Button from "../../components/Button.astro";
-import TextPage from "../../components/TextPage.astro";
-import * as page from "../../content/pages/eidolon.md";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import Pieces from "../../components/Pieces.astro";
+import Tabs from "../../components/Tabs.astro";
 import { world } from "../../worlds";
+import * as page from "../../content/eidolon/index.md";
+
 const w = world("eidolon");
+const f = page.frontmatter;
+
+// Tabs are the other files in content/eidolon, ordered by their `order`. The Pieces tab is filled from content/pieces.
+const files = import.meta.glob<{ frontmatter: { label: string; title: string; order: number }; Content: any }>(
+  "../../content/eidolon/*.md", { eager: true },
+);
+const tabs = Object.entries(files)
+  .filter(([path]) => !path.endsWith("/index.md"))
+  .map(([path, doc]) => ({ id: path.split("/").pop()!.replace(/\.md$/, ""), label: doc.frontmatter.label, title: doc.frontmatter.title, order: doc.frontmatter.order, Content: doc.Content }))
+  .sort((a, b) => a.order - b.order);
 ---
-<TextPage page={page} theme={w.theme} voice="imperial" world={w.id} sections={[{ label: "About", href: "/about/" }]} spirits="4,2,1,3" center>
-  <aside slot="feature" class="pg-cta wrap pad">
-    <p class="pg-cta__row"><span>{page.frontmatter.cta}</span><Button kind="square" label={page.frontmatter.cta_label} href="/rite-tec/" /></p>
-  </aside>
-</TextPage>
+<Base title={f.title} description={f.description} theme={w.theme} voice="imperial" world={w.id} sections={[{ label: "About", href: "/about/" }]}>
+  <PageHead kicker={f.kicker} heading={f.heading} lede={f.lede} voice="imperial" spirits="4,2,1,3" />
+  <Tabs tabs={tabs} label="Eidolon">
+    <Pieces slot="pieces" />
+  </Tabs>
+</Base>
