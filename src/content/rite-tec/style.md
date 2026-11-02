@@ -37,7 +37,7 @@ It is made for dark electronic music, mostly between 120 and 140 BPM, and for di
 
 ### Who it fits
 
-Rite Tec is hard to pick up from the outside. The physical principles from Chinese internal wushu take serious investment and training with a teacher in person, and a video cannot pass them on. Still, anyone who shares a practice with Rite Tec can take something from it. Start from the part that meets your own practice, usually the steps, add one principle at a time and leave the rest.
+Rite Tec is hard to pick up from the outside. I am no master. I have practiced internal martial arts for more than 10 years in total. For the base principles of Chinese internal wushu, I suggest a dedicated trainer in person: a certified sifu who practices. A video cannot pass them on. Still, anyone who shares a practice with Rite Tec can take something from it. Start from the part that meets your own practice, usually the steps, add one principle at a time and leave the rest.
 
 | If you practice | What Rite Tec can add |
 | --- | --- |
