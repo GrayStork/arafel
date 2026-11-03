@@ -66,7 +66,18 @@ A rod of 3 to 5 kg is held as a third point beside the two feet. It gives the st
 
 <p class="rt-shorts"><span>Shorts</span><a href="https://youtube.com/shorts/uxuN8er56OU" target="_blank" rel="noopener">Part 1 · The Axis</a><a href="https://youtube.com/shorts/HvbGrKF0Z84" target="_blank" rel="noopener">Part 2 · Steps</a><span class="soon">Part 3 · Levels</span></p>
 
-Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements). More rod work follows.
+Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements).
+
+#### Rod 2
+
+Low stances and the kneel around the planted rod, at half tempo.
+
+<figure class="rt-video">
+<video src="/video/rod/rite-tec-rod2-1-ground.mp4" poster="/video/rod/rite-tec-rod2-1-ground.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 1 · Ground</figcaption>
+</figure>
+
+Music: [Kælan Mikla, Svört Augu](https://kaelanmikla.bandcamp.com/track/sv-rt-augu). More rod work follows.
 
 ### Empty hand
 

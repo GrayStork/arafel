@@ -36,12 +36,9 @@ sites/
 src/content/AGENTS.md
 src/content/NOTES.md
 
-# Local media, not part of the site (public/video is site media)
+# Local media, not part of the site. /video/ holds cuts in work and clips that live only on YouTube;
+# a video moves (never copies) to public/video/ once it is approved and placed on a page.
 *.wav
 *.mov
 /video/
 
-# Clips that live on YouTube as Shorts: the site carries the long video and links to them.
-public/video/rod/rite-tec-rod-1-the-axis.*
-public/video/rod/rite-tec-rod-2-steps.*
-public/video/rod/rite-tec-rod-3-levels.*
