@@ -64,8 +64,8 @@ div.ph-edge .ei-prismsep { height: 48px; margin: -24px 0 0; }
 .pg-cta__row--small .ei-btn { padding: 12px 32px; font-size: 13px; line-height: 18px; }
 .doc h2 { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--bone); font-size: clamp(30px, 1.8vw + 22px, 52px); line-height: 1.05; }
 .doc h3, .doc h4 { scroll-margin-top: 32px; }
-/* Below 900px the Rite Tec tabs are a sticky bar, 48px tall; a linked heading lands clear of it. */
-@media (max-width: 900px) { .doc h3, .doc h4 { scroll-margin-top: 64px; } }
+/* Below 900px the tabs are a sticky bar, 48px tall; a linked heading or tab lands clear of it. */
+@media (max-width: 900px) { .doc h3, .doc h4, [role="tabpanel"] { scroll-margin-top: 64px; } }
 .doc h3 { margin: 64px 0 0; font-family: var(--v-sub); font-weight: var(--v-sub-w); color: var(--trace); font-size: clamp(22px, .8vw + 18px, 30px); line-height: 1.15; }
 .doc h4 { margin: 40px 0 0; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--trace); }
 /* Rite Tec videos: vertical clips in the reading column, no frame. */

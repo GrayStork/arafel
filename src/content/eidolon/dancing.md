@@ -9,6 +9,6 @@ I have danced all my life. When I was young I chose a different path over profes
 
 | | |
 | --- | --- |
-| **Where** | Dojos where I trained martial arts, parks, my own yard, every place I train. Parties and festivals. |
+| **Where** | My "Dojos": that is what I call the places I train in. Martial arts halls, parks, my own yard. Parties and festivals. |
 | **How** | As a ritual. On the floor I play an elusive shaman: I appear, invoke and dissolve. |
-| **For whom** | The party dancers: the ones who endure and keep going, relentless, until the last track. I am occasionally open to collaborations and proposals for staged pieces, but my main passion is the non-stop dance floor rite. That is what I train for in my dojos. |
+| **For whom** | The party dancers: the ones who endure and keep going, relentless, until the last track. I am occasionally open to collaborations and proposals for staged pieces, but my main passion is the non-stop dance floor rite. That is what I train for in my "Dojos". |
