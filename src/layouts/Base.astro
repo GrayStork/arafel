@@ -21,6 +21,8 @@ const { title, description, theme, voice, world, sections = [], noindex = false,
 const ogName = og ?? (world === "rite-tec" || world === "eidolon" || world === "architect" ? world : "home");
 const ogImage = new URL(`/og/${ogName}.png`, Astro.site).href;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+// Cloudflare Web Analytics: no cookies, production builds only. The site token is public; empty turns it off.
+const analyticsToken = "f4956caf3c7f48d4ba248aa7427d020d";
 ---
 <!doctype html>
 <html lang="en" data-theme={theme} data-voice={voice}>
@@ -42,6 +44,7 @@ const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {import.meta.env.PROD && analyticsToken && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: analyticsToken })}></script>}
   </head>
   <body>
     <div class="ei-page">
