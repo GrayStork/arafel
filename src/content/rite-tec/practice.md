@@ -21,8 +21,23 @@ I train Rite Tec on two sides at once: the mind and the body. I keep a set of ro
 | Fitness and endurance | Aerobic forms: patterns and moves for cardio, rhythm and breath. |
 | Flexibility | Flexibility to rhythm: directional popping, hands or legs hitting on the beat. |
 | Technique | Footwork, projection and hand work, drilled as fixed routines. |
-| Control of mass | Hand barbells of 1 to 3 kg and a rod of 3 to 5 kg. Empty and full in the legs, the rod as a third point. |
+| Control of mass | Weights in the hands and a rod (see Tools). Empty and full in the legs, the rod as a third point. |
 | Body mechanics | Directions, alignment and the spiral. Each leg and hand moving on its own, placed on purpose, standing and on the floor. |
+
+### Tools
+
+Beside body training without equipment, I train Rite Tec with three tools. They put weight in the hands, so every move has a mass to control.
+
+<figure class="rt-photo">
+<img src="/rite-tec/tools.jpg" alt="A black rod with yellow tips, a pair of small dumbbells and one heavier dumbbell on a wooden floor" width="1440" height="800" loading="lazy">
+<figcaption>Rod · pair of dumbbells · single dumbbell</figcaption>
+</figure>
+
+| Tool | Weight | Use |
+| --- | --- | --- |
+| Rod | 3 to 5 kg | The third point beside the two feet. Steps, frame and the spiral held around it. |
+| Pair of dumbbells | 1 to 2 kg each | Both hands loaded the same: hand work, hits and stops on the beat. |
+| Single dumbbell | 3 to 5 kg | In one hand, or in both like the rod. It is compact: nothing reaches out to hit the body or catch the space around it. |
 
 ### Routine and improvisation
 
@@ -60,6 +75,11 @@ Legs, hands and drama, without the rod.
 <figure class="rt-video">
 <video src="/video/empty/rite-tec-empty-hand-1-fusion.mp4" poster="/video/empty/rite-tec-empty-hand-1-fusion.jpg" controls playsinline preload="none"></video>
 <figcaption>Part 1 · Fusion</figcaption>
+</figure>
+
+<figure class="rt-video">
+<video src="/video/empty/rite-tec-empty-hand-2-powering-the-pulse.mp4" poster="/video/empty/rite-tec-empty-hand-2-powering-the-pulse.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 2 · Powering the Pulse</figcaption>
 </figure>
 
 Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements).

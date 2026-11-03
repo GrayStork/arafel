@@ -72,6 +72,10 @@ div.ph-edge .ei-prismsep { height: 48px; margin: -24px 0 0; }
 .doc .rt-video { margin: 32px 0 0; max-width: 360px; }
 .doc .rt-video video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: var(--abyss); }
 .doc .rt-video figcaption { margin-top: 8px; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
+/* Rite Tec photos: full reading width, no frame. */
+.doc .rt-photo { margin: 32px 0 0; max-width: 640px; }
+.doc .rt-photo img { display: block; width: 100%; height: auto; }
+.doc .rt-photo figcaption { margin-top: 8px; font: 500 13px/18px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; color: var(--ink-muted); }
 /* Links to the Shorts cut from a long video: the label in muted nav type, the links in A2. */
 .doc .rt-shorts { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 24px; margin: 24px 0 0; max-width: none; font: 500 13px/20px var(--v-nav); letter-spacing: var(--v-nav-ls); text-transform: uppercase; }
 .doc .rt-shorts span { color: var(--ink-muted); }
