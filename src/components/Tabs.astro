@@ -65,12 +65,12 @@ for (const t of tabs) if (Astro.slots.has(t.id)) extra[t.id] = await Astro.slots
     };
 
     tabs.forEach((t, i) => {
-      t.addEventListener("click", (e) => { e.preventDefault(); go(t.getAttribute("aria-controls")!); });
+      t.addEventListener("click", (e) => { e.preventDefault(); go(t.getAttribute("aria-controls")!, false, true); });
       t.addEventListener("keydown", (e) => {
         const step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
         if (step === undefined) return;
         e.preventDefault();
-        go(tabs[(i + step + tabs.length) % tabs.length].getAttribute("aria-controls")!, true);
+        go(tabs[(i + step + tabs.length) % tabs.length].getAttribute("aria-controls")!, true, true);
       });
     });
     root.querySelectorAll<HTMLAnchorElement>("[data-step]").forEach((a) =>
