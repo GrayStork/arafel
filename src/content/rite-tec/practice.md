@@ -94,3 +94,35 @@ Legs, hands and drama, without the rod.
 </figure>
 
 Music: [art.ic, Synthethic Movements (ABSENCE)](https://absencetechno.bandcamp.com/track/synthethic-movements).
+
+### Dumbbell
+
+A single 5 kg dumbbell, held in both hands or in one. The weight leads the arcs and swings, and the legs carry it.
+
+<figure class="rt-video">
+<video src="/video/dumbbell/rite-tec-practice-dumbbell5kg-weight.mp4" poster="/video/dumbbell/rite-tec-practice-dumbbell5kg-weight.jpg" controls playsinline preload="none"></video>
+<figcaption>Practice · Weight</figcaption>
+</figure>
+
+<figure class="rt-video">
+<video src="/video/dumbbell/rite-tec-practice-dumbbell5kg-swing.mp4" poster="/video/dumbbell/rite-tec-practice-dumbbell5kg-swing.jpg" controls playsinline preload="none"></video>
+<figcaption>Practice · Swing</figcaption>
+</figure>
+
+Music: [Kuollut, Sydän (Untitled Burial)](https://untitledburial.bandcamp.com/track/sydan).
+
+### Witch house application
+
+The empty hand work, danced to witch house. The pulse slows down and the stances go low.
+
+<figure class="rt-video">
+<video src="/video/witch-house/rite-tec-witch-house-1-night-voice.mp4" poster="/video/witch-house/rite-tec-witch-house-1-night-voice.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 1 · Night Voice</figcaption>
+</figure>
+
+<figure class="rt-video">
+<video src="/video/witch-house/rite-tec-witch-house-2-heart.mp4" poster="/video/witch-house/rite-tec-witch-house-2-heart.jpg" controls playsinline preload="none"></video>
+<figcaption>Part 2 · Heart</figcaption>
+</figure>
+
+Music: [Kuollut, Yön Ääni (Untitled Burial)](https://untitledburial.bandcamp.com/album/sacred-carbon) and [Kuollut, Sydän (Untitled Burial)](https://untitledburial.bandcamp.com/track/sydan).
